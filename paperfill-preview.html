@@ -1,0 +1,1791 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="https://paperfill.pages.dev/" />
+    <style>
+      html {
+        scroll-behavior: auto;
+      }
+      #manual-mode-card,
+      #upload-mode-card,
+      #dealer-upload-mode-card,
+      #dealer-manual-mode-card,
+      #ai-settings-btn,
+      #ai-modal {
+        scroll-margin-top: 80px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>P Fill - CVT-1, IT-5 & Dealer Performa Filler</title>
+
+    <!-- Primary Meta Tags -->
+    <meta
+      name="description"
+      content="Auto-fill official Punjab CVT-1, Federal FBR IT-5, and DHA Lahore Dealer Performa property forms online. Fast AI extraction, instant preview, print, and download."
+    />
+    <meta name="author" content="P Fill" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://pfill.pages.dev/" />
+    <meta name="theme-color" content="#1e3a8a" />
+    <meta name="color-scheme" content="light dark" />
+
+    <!-- PWA & Mobile Icons -->
+    <link rel="apple-touch-icon" href="logo.png" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pfill.pages.dev/" />
+    <meta property="og:site_name" content="P Fill" />
+    <meta
+      property="og:title"
+      content="P Fill - Automated Property Transfer Form Filler (CVT-1, IT-5 & Dealer Performa)"
+    />
+    <meta
+      property="og:description"
+      content="Auto-fill, preview, download, and print official Punjab CVT-1, FBR IT-5, and DHA Lahore Dealer Performa forms with high accuracy."
+    />
+    <meta property="og:image" content="https://pfill.pages.dev/logo.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="P Fill - Official Property Form Automation"
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://pfill.pages.dev/" />
+    <meta
+      name="twitter:title"
+      content="P Fill - Property Form Filler | CVT-1, IT-5 & Dealer Performa"
+    />
+    <meta
+      name="twitter:description"
+      content="Generate official filled PDF forms for Punjab CVT-1, FBR IT-5, and DHA Lahore Dealer Performa in seconds."
+    />
+    <meta name="twitter:image" content="https://pfill.pages.dev/logo.png" />
+
+    <!-- Structured Data (JSON-LD) for Google Rich Search Results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "@id": "https://pfill.pages.dev/#webapp",
+            "url": "https://pfill.pages.dev/",
+            "name": "P Fill",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "All Modern Web Browsers",
+            "browserRequirements": "Requires JavaScript. Requires HTML5.",
+            "inLanguage": "en-PK",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Pakistan"
+            },
+            "description": "Automated property transfer form filler tool for official Punjab CVT-1, Federal IT-5 (FBR), and DHA Lahore Dealer Performa PDF documents.",
+            "keywords": "CVT-1, IT-5, DHA Lahore, Dealer Performa, CNIC, Marla, Kanal, Property Transfer Pakistan, FBR 236K, FBR 236C, Punjab Capital Value Tax",
+            "featureList": [
+              "AI Document Extraction from transfer letters",
+              "Official Punjab CVT-1 Capital Value Tax PDF Form Auto-Filling",
+              "Official Federal IT-5 FBR Advance Tax PDF Form Auto-Filling",
+              "Official DHA Lahore Estate Agency Dealer Performa Generation",
+              "Instant High-Resolution PDF Document Preview",
+              "Direct PDF Download and One-Click Printing",
+              "100% Client-Side Private Document Processing"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "PKR"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://pfill.pages.dev/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is P Fill?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "P Fill is an automated property document preparation web application that fills official CVT-1, IT-5, and Dealer Performa forms from property transfer letters or manual input."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which official property forms does P Fill support?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "P Fill supports Punjab CVT-1 (Capital Value Tax form), Federal IT-5 (Advance Income Tax under section 236K/236C by FBR), and official DHA Lahore Estate Agency Dealer Performa representation forms."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I preview and print forms directly from P Fill?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, P Fill provides full high-resolution PDF preview, direct PDF downloading, and one-click printing for CVT-1, IT-5, and Dealer Performa documents."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Preload Stylesheet & Critical PDF Form Assets -->
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="preload" href="pdf-lib.min.js" as="script" />
+    <link rel="preload" href="pdf_templates.js?v=39.0" as="script" />
+
+    <!-- PDF Reading, OCR, PDF Generation & Form Filling (Deferred for Non-Blocking Instant Paint) -->
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"
+    ></script>
+    <script defer src="pdf-lib.min.js"></script>
+    <script defer src="pdf_templates.js?v=39.0"></script>
+
+    <!-- EmailJS Browser SDK for Direct Client-Side Contact Delivery -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <noscript>
+      <div
+        style="
+          background: #ef4444;
+          color: #ffffff;
+          padding: 1.25rem;
+          text-align: center;
+          font-family: sans-serif;
+          font-weight: 600;
+        "
+      >
+        ⚠️ P Fill requires JavaScript enabled in your browser to process forms,
+        run local OCR, and generate official PDFs securely on your device.
+      </div>
+    </noscript>
+
+    <!-- Full Screen Width Header -->
+    <header class="top-bar">
+      <div class="header-inner">
+        <!-- Top Row: Brand & Main Navigation (Home, About, Contact) -->
+        <div class="top-bar-top-row">
+          <div class="brand-header">
+            <img
+              src="logo.png"
+              alt="P Fill - Property Form Automation Official Logo"
+              class="brand-logo"
+              width="48"
+              height="48"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <div>
+              <h1>P Fill</h1>
+              <p class="subtitle" id="header-subtitle">
+                Auto-fill official CVT-1 & IT-5 forms and Dealer Performa
+              </p>
+            </div>
+          </div>
+
+          <nav class="main-nav-menu" aria-label="Site Navigation">
+            <a href="/" id="nav-btn-home" class="nav-menu-btn active">Home</a>
+            <a href="/about" id="nav-btn-about" class="nav-menu-btn">About</a>
+            <a href="/contact" id="nav-btn-contact" class="nav-menu-btn"
+              >Contact Us</a
+            >
+            <a href="/terms" id="nav-btn-terms" class="nav-menu-btn"
+              >Terms of Service</a
+            >
+          </nav>
+        </div>
+
+        <!-- Bottom Line: Dark/Bright button, API Key button, and Clear button ALWAYS remain here -->
+        <div class="header-bottom-line">
+          <div class="header-persistent-tools">
+            <button
+              id="theme-toggle-btn"
+              class="btn btn-outline btn-theme"
+              title="Toggle Light / Dark Mode"
+              aria-label="Toggle theme"
+            >
+              🌙
+            </button>
+            <button
+              id="ai-settings-btn"
+              class="btn btn-outline"
+              title="Configure Gemini API Key"
+            >
+              🔑 API Key
+            </button>
+            <button
+              id="clear-btn"
+              class="btn btn-outline"
+              title="Clear all entered data"
+            >
+              Clear
+            </button>
+          </div>
+
+          <!-- CVT-1 & IT-5 Actions (Preview, Download and Print for both CVT-1 and IT-5) -->
+          <div id="cvt-header-actions" class="header-action-group hidden">
+            <button
+              id="preview-cvt1-btn"
+              class="btn btn-outline btn-disabled-state"
+              title="Preview filled official CVT-1 form"
+            >
+              👁️ Preview CVT-1
+            </button>
+            <button
+              id="download-cvt1-btn"
+              class="btn btn-primary btn-disabled-state"
+              title="Download filled official CVT-1 form"
+            >
+              📄 Download CVT-1
+            </button>
+            <button
+              id="print-cvt1-btn"
+              class="btn btn-outline btn-disabled-state"
+              title="Print filled official CVT-1 form"
+            >
+              🖨️ Print CVT-1
+            </button>
+            <button
+              id="preview-it5-btn"
+              class="btn btn-outline btn-disabled-state"
+              title="Preview filled official IT-5 form"
+            >
+              👁️ Preview IT-5
+            </button>
+            <button
+              id="download-it5-btn"
+              class="btn btn-dark btn-disabled-state"
+              title="Download filled official IT-5 form"
+            >
+              📄 Download IT-5
+            </button>
+            <button
+              id="print-it5-btn"
+              class="btn btn-outline btn-disabled-state"
+              title="Print filled official IT-5 form"
+            >
+              🖨️ Print IT-5
+            </button>
+          </div>
+
+          <!-- Dealer Performa Actions (Upper Group in Header Bar like CVT-1 & IT-5) -->
+          <div id="dealer-header-actions" class="header-action-group hidden">
+            <button
+              id="dealer-preview-btn"
+              class="btn btn-outline btn-disabled-state"
+              title="Preview filled Dealer Performa"
+            >
+              👁️ Preview
+            </button>
+            <button
+              id="dealer-download-btn"
+              class="btn btn-primary btn-disabled-state"
+              title="Download Dealer Performa document"
+            >
+              📄 Download Performa
+            </button>
+            <button
+              id="dealer-print-btn"
+              class="btn btn-dark btn-disabled-state"
+              title="Print Dealer Performa"
+            >
+              🖨️ Print Performa
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Centered Page Container for SPA Pages -->
+    <main class="page-container">
+      <!-- PAGE 1: HOME PAGE -->
+      <div id="page-home" class="spa-page">
+        <!-- Main Interface Module Switcher Buttons -->
+        <nav class="module-nav-bar" aria-label="Main Interface Navigation">
+          <!-- Row 1: Button 1 & Button 2 -->
+          <button
+            type="button"
+            id="tab-btn-cvt-it5"
+            class="module-tab-btn"
+            title="Open CVT-1 and IT-5 Auto-Fill"
+          >
+            <span class="tab-icon">📄</span>
+            <span class="tab-title">CVT-1 and IT-5</span>
+          </button>
+          <button
+            type="button"
+            id="tab-btn-dealer-performa"
+            class="module-tab-btn"
+            title="Open Dealer Performa"
+          >
+            <span class="tab-icon">🏢</span>
+            <span class="tab-title">Dealer Performa</span>
+          </button>
+        </nav>
+
+        <!-- Welcome Prompt (Shown initially when no button is clicked) -->
+        <div id="welcome-prompt-card" class="welcome-card">
+          <div class="welcome-icon">⚡</div>
+          <div class="welcome-title">Select a Feature to Begin</div>
+          <p class="welcome-sub">
+            Please click <strong>CVT-1 and IT-5</strong> or
+            <strong>Dealer Performa</strong> above to view options and start
+            preparing documents.
+          </p>
+        </div>
+
+        <!-- ================================================================= -->
+        <!-- View 1: CVT-1 and IT-5 View -->
+        <!-- ================================================================= -->
+        <div id="view-cvt-it5" class="module-view hidden">
+          <!-- Main Options: Upload File vs Type Data Manually -->
+          <section class="mode-options-grid">
+            <!-- Option 1: Upload Document -->
+            <label
+              class="mode-card drop-zone"
+              id="upload-mode-card"
+              for="file-input"
+            >
+              <span class="mode-badge">Option 1</span>
+              <div class="drop-icon">📄</div>
+              <div class="drop-title">Upload Document (AI Auto-Fill)</div>
+              <div class="drop-sub" id="file-chosen-text">
+                Click to choose image / PDF or drag & drop
+              </div>
+              <input
+                type="file"
+                id="file-input"
+                accept="image/*,.pdf"
+                multiple
+              />
+            </label>
+
+            <!-- Option 2: Add Data Manually -->
+            <div
+              class="mode-card manual-entry-card"
+              id="manual-mode-card"
+              role="button"
+              tabindex="0"
+            >
+              <span class="mode-badge manual-badge">Option 2</span>
+              <div class="drop-icon">✍️</div>
+              <div class="drop-title">Add Data Manually</div>
+              <div class="drop-sub">
+                Click here to type buyer, seller & plot details directly
+              </div>
+            </div>
+          </section>
+
+          <!-- Status Message -->
+          <div
+            id="status-bar"
+            class="status-bar hidden"
+            role="status"
+            aria-live="polite"
+          >
+            <div class="spinner"></div>
+            <span id="status-msg">Extracting data...</span>
+          </div>
+
+          <!-- Manual Entry / Fallback Notice -->
+          <div id="manual-notice" class="notice-banner hidden">
+            <div class="notice-icon">✍️</div>
+            <div class="notice-body">
+              <strong>Manual Entry Mode:</strong>
+              <span
+                >AI extraction was unavailable or could not connect. You can
+                type the details directly in the fields below and download the
+                filled forms once all fields are complete.</span
+              >
+            </div>
+            <button id="notice-close-btn" class="notice-close" title="Dismiss">
+              &times;
+            </button>
+          </div>
+
+          <!-- Extracted / Manual Data Cards (Initially Hidden) -->
+          <section id="results-grid" class="results-grid hidden">
+            <!-- Purchaser (Buyer) Card -->
+            <section class="data-card">
+              <h3>Purchaser (Buyer)</h3>
+              <div class="field-list">
+                <div class="field-item">
+                  <label class="lbl" for="purchaser-name">Full Name</label>
+                  <input
+                    type="text"
+                    id="purchaser-name"
+                    placeholder="Waiting for extraction..."
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="field-item">
+                  <label class="lbl" for="purchaser-cnic">CNIC / ID No</label>
+                  <input
+                    type="text"
+                    id="purchaser-cnic"
+                    placeholder="e.g. 35201-XXXXXXX-X"
+                    inputmode="numeric"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="field-item">
+                  <label class="lbl" for="purchaser-address">Address</label>
+                  <input
+                    type="text"
+                    id="purchaser-address"
+                    placeholder="Waiting for extraction..."
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <!-- Seller Card -->
+            <section class="data-card">
+              <h3>Seller</h3>
+              <div class="field-list">
+                <div class="field-item">
+                  <label class="lbl" for="seller-name">Full Name</label>
+                  <input
+                    type="text"
+                    id="seller-name"
+                    placeholder="Waiting for extraction..."
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="field-item">
+                  <label class="lbl" for="seller-cnic">CNIC / ID No</label>
+                  <input
+                    type="text"
+                    id="seller-cnic"
+                    placeholder="e.g. 35201-XXXXXXX-X"
+                    inputmode="numeric"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="field-item">
+                  <label class="lbl" for="seller-address">Address</label>
+                  <input
+                    type="text"
+                    id="seller-address"
+                    placeholder="Waiting for extraction..."
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+            </section>
+
+            <!-- Property Details Card -->
+            <section class="data-card full-width">
+              <h3>Property & Plot Details</h3>
+              <div class="property-grid">
+                <div class="field-item">
+                  <label class="lbl" for="plot-type">Plot Type</label>
+                  <input
+                    type="text"
+                    id="plot-type"
+                    placeholder="e.g. Residential / Commercial"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="field-item">
+                  <label class="lbl" for="property-status"
+                    >Property Status</label
+                  >
+                  <input
+                    type="text"
+                    id="property-status"
+                    placeholder="e.g. Plot / Flat / House"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="field-item">
+                  <label class="lbl" for="land-size">Land Size / Area</label>
+                  <input
+                    type="text"
+                    id="land-size"
+                    placeholder="e.g. 5 Marla / 1 Kanal"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="field-item">
+                  <label class="lbl" for="plot-no">Plot / House No</label>
+                  <input
+                    type="text"
+                    id="plot-no"
+                    placeholder="e.g. Plot # 246"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="field-item">
+                  <label class="lbl" for="phase-block">Phase & Block</label>
+                  <input
+                    type="text"
+                    id="phase-block"
+                    placeholder="e.g. Phase-8, Block-Z5"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+
+        <!-- View 2: Dealer Performa View -->
+        <div id="view-dealer-performa" class="module-view hidden">
+          <!-- Main Options: Upload File vs Type Data Manually for Dealer Performa -->
+          <section class="mode-options-grid">
+            <!-- Option 1: Upload Document -->
+            <label
+              class="mode-card drop-zone"
+              id="dealer-upload-mode-card"
+              for="dealer-file-input"
+            >
+              <span class="mode-badge">Option 1</span>
+              <div class="drop-icon">📄</div>
+              <div class="drop-title">Upload Document (AI Auto-Fill)</div>
+              <div class="drop-sub" id="dealer-file-chosen-text">
+                Click to choose image / PDF or drag & drop
+              </div>
+              <input
+                type="file"
+                id="dealer-file-input"
+                accept="image/*,.pdf"
+                multiple
+              />
+            </label>
+
+            <!-- Option 2: Add Data Manually -->
+            <div
+              class="mode-card manual-entry-card"
+              id="dealer-manual-mode-card"
+              role="button"
+              tabindex="0"
+            >
+              <span class="mode-badge manual-badge">Option 2</span>
+              <div class="drop-icon">✍️</div>
+              <div class="drop-title">Add Data Manually</div>
+              <div class="drop-sub">
+                Click here to type property, seller, purchaser & EA details
+                directly
+              </div>
+            </div>
+          </section>
+
+          <!-- Status Message for Dealer Performa -->
+          <div
+            id="dealer-status-bar"
+            class="status-bar hidden"
+            role="status"
+            aria-live="polite"
+          >
+            <div class="spinner"></div>
+            <span id="dealer-status-msg">Extracting data...</span>
+          </div>
+
+          <!-- Manual Entry / Fallback Notice for Dealer Performa -->
+          <div id="dealer-manual-notice" class="notice-banner hidden">
+            <div class="notice-icon">✍️</div>
+            <div class="notice-body">
+              <strong>Dealer Performa:</strong>
+              <span
+                >You can type the details directly in the fields below and print
+                or save your performa.</span
+              >
+            </div>
+            <button
+              id="dealer-notice-close-btn"
+              class="notice-close"
+              title="Dismiss"
+            >
+              &times;
+            </button>
+          </div>
+
+          <!-- Dealer Performa Form Cards (Initially Hidden) -->
+          <section
+            id="dealer-results-grid"
+            class="dealer-results-container hidden"
+          >
+            <!-- Dealer Performa Controls Header -->
+            <section class="dealer-header-card">
+              <div class="dealer-header-info">
+                <h2>Dealer Performa</h2>
+                <p>Official Estate Agency Representation & Transfer Record</p>
+              </div>
+              <div class="dealer-header-actions">
+                <button
+                  type="button"
+                  id="dealer-clear-btn"
+                  class="btn btn-outline"
+                  title="Clear all Dealer Performa fields"
+                >
+                  Clear
+                </button>
+              </div>
+            </section>
+
+            <!-- EA Contact & City Notification Banner (Red first -> Green -> Gently Disappears) -->
+            <div id="dealer-ea-notification" class="dealer-ea-notification">
+              <div class="ea-notif-main">
+                <div class="ea-notif-icon">⚠️</div>
+                <div class="ea-notif-content">
+                  <div class="ea-notif-title-row">
+                    <span class="ea-notif-heading"
+                      >Confirm Default EA Contact & City:</span
+                    >
+                    <span id="ea-current-phone-badge" class="ea-phone-pill"
+                      >0300-0471888</span
+                    >
+                    <span id="ea-current-city-badge" class="ea-phone-pill"
+                      >Lahore</span
+                    >
+                    <span
+                      id="ea-status-tag"
+                      class="ea-status-pill pending-status"
+                      >Confirm First</span
+                    >
+                  </div>
+                  <p id="ea-notif-desc" class="ea-notif-text">
+                    Default mobile number <strong>0300-0471888</strong> and city
+                    <strong>Lahore</strong> must be confirmed first. Please keep
+                    these defaults or change them.
+                  </p>
+                </div>
+              </div>
+              <div class="ea-notif-actions">
+                <button
+                  type="button"
+                  id="ea-keep-default-btn"
+                  class="btn btn-sm btn-outline-success"
+                  title="Confirm and use default 0300-0471888 & Lahore"
+                >
+                  ✓ Keep Defaults (0300-0471888 & Lahore)
+                </button>
+                <button
+                  type="button"
+                  id="ea-change-number-btn"
+                  class="btn btn-sm btn-primary"
+                  title="Change default contact number or city"
+                >
+                  ✏️ Change Details
+                </button>
+              </div>
+            </div>
+
+            <!-- Quick Change EA Phone Number & City Inline Panel (Expands when Change Details is clicked) -->
+            <div id="ea-quick-edit-panel" class="ea-quick-edit-box hidden">
+              <div class="ea-quick-edit-inner">
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+                  <div style="flex: 1; min-width: 220px">
+                    <label class="lbl" for="ea-quick-edit-input"
+                      >EA Contact Number:</label
+                    >
+                    <input
+                      type="text"
+                      id="ea-quick-edit-input"
+                      placeholder="e.g. 0300-1234567"
+                      value="0300-0471888"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div style="flex: 1; min-width: 220px">
+                    <label class="lbl" for="ea-quick-edit-city"
+                      >City Location:</label
+                    >
+                    <input
+                      type="text"
+                      id="ea-quick-edit-city"
+                      placeholder="e.g. Lahore"
+                      value="Lahore"
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+                <div class="ea-quick-edit-controls" style="margin-top: 0.75rem">
+                  <button
+                    type="button"
+                    id="ea-quick-apply-btn"
+                    class="btn btn-primary btn-sm"
+                  >
+                    Update Both EAs & Cities
+                  </button>
+                  <button
+                    type="button"
+                    id="ea-quick-cancel-btn"
+                    class="btn btn-outline btn-sm"
+                  >
+                    Cancel
+                  </button>
+                </div>
+                <span class="field-help"
+                  >This updates both Seller & Purchaser EA numbers and both
+                  Seller & Purchaser city locations. You can also edit each
+                  field directly below.</span
+                >
+              </div>
+            </div>
+
+            <!-- Dealer Performa Form Grid: Exactly Property Details, Seller, Purchaser & EA -->
+            <div class="dealer-grid">
+              <!-- Property Details Card (Full Width - Single Field, No Side Kicks) -->
+              <section class="data-card full-width">
+                <div class="field-item">
+                  <label class="lbl" for="dealer-property-details"
+                    >Property Details</label
+                  >
+                  <input
+                    type="text"
+                    id="dealer-property-details"
+                    placeholder="Phase-Sector-Plot No."
+                    autocomplete="off"
+                  />
+                </div>
+              </section>
+
+              <!-- Owner / Seller Details Card -->
+              <section class="data-card">
+                <div class="card-title-row">
+                  <h3>Seller's Details</h3>
+                  <span class="badge-tag">Seller</span>
+                </div>
+                <div class="field-list">
+                  <div class="field-item">
+                    <label class="lbl" for="dealer-seller-name"
+                      >Name of Owner / Seller</label
+                    >
+                    <input
+                      type="text"
+                      id="dealer-seller-name"
+                      placeholder="Full name of owner / seller"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="field-item">
+                    <label class="lbl" for="dealer-seller-cnic"
+                      >CNIC / ID Card Number</label
+                    >
+                    <input
+                      type="text"
+                      id="dealer-seller-cnic"
+                      placeholder="e.g. 35201-XXXXXXX-X"
+                      inputmode="numeric"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="field-item">
+                    <label class="lbl" for="dealer-seller-location"
+                      >Location of the Seller (City Only)</label
+                    >
+                    <input
+                      type="text"
+                      id="dealer-seller-location"
+                      value="Lahore"
+                      placeholder="City of seller (e.g. Lahore)"
+                      autocomplete="off"
+                    />
+                    <span class="field-help"
+                      >Default: Lahore (editable by user)</span
+                    >
+                  </div>
+                  <div class="field-item">
+                    <div class="field-label-row">
+                      <label class="lbl" for="dealer-seller-ea"
+                        >EA of the Seller and his Contact No.</label
+                      >
+                      <button
+                        type="button"
+                        id="reset-seller-ea-btn"
+                        class="field-action-link"
+                        title="Reset to default 0300-0471888"
+                      >
+                        ↺ Reset Default
+                      </button>
+                    </div>
+                    <div class="ea-input-wrap">
+                      <input
+                        type="text"
+                        id="dealer-seller-ea"
+                        value="0300-0471888"
+                        placeholder="e.g. 0300-0471888"
+                        autocomplete="off"
+                      />
+                    </div>
+                    <span class="field-help"
+                      >Default: 0300-0471888 (editable by user)</span
+                    >
+                  </div>
+                </div>
+              </section>
+
+              <!-- Purchaser (Buyer) Details Card -->
+              <section class="data-card">
+                <div class="card-title-row">
+                  <h3>Purchaser's Details</h3>
+                  <span class="badge-tag">Purchaser</span>
+                </div>
+                <div class="field-list">
+                  <div class="field-item">
+                    <label class="lbl" for="dealer-purchaser-name"
+                      >Name of Purchaser</label
+                    >
+                    <input
+                      type="text"
+                      id="dealer-purchaser-name"
+                      placeholder="Full name of purchaser"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="field-item">
+                    <label class="lbl" for="dealer-purchaser-cnic"
+                      >CNIC / ID Card Number</label
+                    >
+                    <input
+                      type="text"
+                      id="dealer-purchaser-cnic"
+                      placeholder="e.g. 35201-XXXXXXX-X"
+                      inputmode="numeric"
+                      autocomplete="off"
+                    />
+                  </div>
+                  <div class="field-item">
+                    <label class="lbl" for="dealer-purchaser-location"
+                      >Location of the Purchaser (City Only)</label
+                    >
+                    <input
+                      type="text"
+                      id="dealer-purchaser-location"
+                      value="Lahore"
+                      placeholder="City of purchaser (e.g. Lahore)"
+                      autocomplete="off"
+                    />
+                    <span class="field-help"
+                      >Default: Lahore (editable by user)</span
+                    >
+                  </div>
+                  <div class="field-item">
+                    <div class="field-label-row">
+                      <label class="lbl" for="dealer-purchaser-ea"
+                        >EA of the Purchaser and his Contact No.</label
+                      >
+                      <button
+                        type="button"
+                        id="reset-purchaser-ea-btn"
+                        class="field-action-link"
+                        title="Reset to default 0300-0471888"
+                      >
+                        ↺ Reset Default
+                      </button>
+                    </div>
+                    <div class="ea-input-wrap">
+                      <input
+                        type="text"
+                        id="dealer-purchaser-ea"
+                        value="0300-0471888"
+                        placeholder="e.g. 0300-0471888"
+                        autocomplete="off"
+                      />
+                    </div>
+                    <span class="field-help"
+                      >Default: 0300-0471888 (editable by user)</span
+                    >
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+        </div>
+
+        <!-- Visible FAQ & Official Document Information Section (SEO Knowledge Base) -->
+        <section
+          class="home-faq-section"
+          id="faq-section"
+          aria-label="Frequently Asked Questions & Property Transfer Document Guide"
+        >
+          <div class="faq-section-header">
+            <span class="faq-badge">📖 Official Document Guide & FAQs</span>
+            <h2>Property Transfer Forms & Guidelines</h2>
+            <p>
+              Complete information on official Punjab CVT-1, Federal FBR IT-5,
+              and DHA Lahore Dealer Performa documents for property buyers,
+              sellers, and estate agencies.
+            </p>
+          </div>
+
+          <div class="faq-cards-grid">
+            <!-- Card 1: Punjab CVT-1 -->
+            <article class="faq-card">
+              <div class="faq-card-header">
+                <span class="faq-card-icon">🏛️</span>
+                <div>
+                  <h3>What is CVT-1 (Punjab Capital Value Tax)?</h3>
+                  <span class="faq-tag"
+                    >Punjab Government • Revenue Department</span
+                  >
+                </div>
+              </div>
+              <div class="faq-card-body">
+                <p>
+                  <strong>CVT-1</strong> is the official
+                  <em>Capital Value Tax</em> declaration form mandated by the
+                  Government of Punjab for all real estate and immovable
+                  property transfers. It formally records the transaction value,
+                  plot or house identification (phase, sector, plot number), and
+                  the identities of both the seller and purchaser along with
+                  their Computerized National Identity Cards (CNIC).
+                </p>
+                <p>
+                  In P Fill, you can generate an accurate, publication-grade
+                  Punjab CVT-1 PDF filled directly with official coordinate
+                  alignments, ready for immediate signature and submission to
+                  revenue authorities.
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 2: Federal FBR IT-5 -->
+            <article class="faq-card">
+              <div class="faq-card-header">
+                <span class="faq-card-icon">📋</span>
+                <div>
+                  <h3>What is IT-5 (FBR Advance Income Tax)?</h3>
+                  <span class="faq-tag"
+                    >Federal Board of Revenue (FBR) • Sections 236K & 236C</span
+                  >
+                </div>
+              </div>
+              <div class="faq-card-body">
+                <p>
+                  <strong>IT-5</strong> is the official
+                  <em>Advance Income Tax</em> withholding statement required by
+                  Pakistan's Federal Board of Revenue (FBR) under the Income Tax
+                  Ordinance, 2001 (specifically Section 236C for sellers and
+                  Section 236K for purchasers). It certifies tax collection at
+                  the time of property transfer or registration.
+                </p>
+                <p>
+                  P Fill prepares and populates the official IT-5 PDF form with
+                  seller, purchaser, CNIC, and property particulars, eliminating
+                  manual handwriting and potential administrative clerical
+                  errors.
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 3: DHA Lahore Dealer Performa -->
+            <article class="faq-card">
+              <div class="faq-card-header">
+                <span class="faq-card-icon">🏢</span>
+                <div>
+                  <h3>What is the Dealer Performa?</h3>
+                  <span class="faq-tag"
+                    >DHA Lahore • Estate Agency Transfer Representation</span
+                  >
+                </div>
+              </div>
+              <div class="faq-card-body">
+                <p>
+                  The <strong>Dealer Performa</strong> is the official
+                  representation slip utilized during property transfer
+                  submissions in the Defence Housing Authority (DHA Lahore). It
+                  records the concise property code (in the standardized
+                  <em>Phase-Sector-Plot</em> format such as
+                  <code>7-Q-123</code>), the seller's full legal name, CNIC, and
+                  city location, the purchaser's legal name, CNIC, and city
+                  location, as well as the authorized Estate Agent (EA) names
+                  and contact phone numbers for both parties.
+                </p>
+                <p>
+                  With P Fill, estate agents and consultants can instantly fill,
+                  preview in high-resolution, print, or download completed
+                  Dealer Performa documents with bold typography and official
+                  formatting.
+                </p>
+              </div>
+            </article>
+
+            <!-- Card 4: How P Fill Works & Privacy -->
+            <article class="faq-card">
+              <div class="faq-card-header">
+                <span class="faq-card-icon">🔒</span>
+                <div>
+                  <h3>How does P Fill protect customer privacy?</h3>
+                  <span class="faq-tag"
+                    >100% Client-Side • Zero Cloud Storage</span
+                  >
+                </div>
+              </div>
+              <div class="faq-card-body">
+                <p>
+                  P Fill operates with a strict
+                  <strong>100% client-side privacy architecture</strong>. All
+                  PDF rendering, OCR processing, and document population are
+                  computed directly within your local web browser. No property
+                  deeds, CNIC numbers, addresses, customer records, or financial
+                  information are ever saved or transmitted to external servers.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- PAGE 2: SEPARATE ABOUT PAGE -->
+      <div id="page-about" class="spa-page hidden">
+        <section class="page-hero">
+          <span class="hero-badge">⚡ Advanced Form Automation</span>
+          <h2>About P Fill</h2>
+          <p>
+            P Fill is an intelligent, high-precision document extraction and
+            form-filling platform engineered specifically for DHA (Pakistan)
+            property transactions and real estate consultants.
+          </p>
+        </section>
+
+        <!-- Key Capabilities Grid -->
+        <section class="about-features-grid">
+          <div class="about-card">
+            <div class="about-card-icon">📄</div>
+            <h3>Official CVT-1 & IT-5 Auto-Fill</h3>
+            <p>
+              Eliminate tedious manual handwriting on official government forms.
+              P Fill automatically renders buyer, seller, CNIC, and property
+              details directly onto official CVT-1 and IT-5 forms with
+              pixel-level coordinate precision.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-card-icon">🏢</div>
+            <h3>Dealer Performa Slips</h3>
+            <p>
+              Quickly create standardized Estate Agency Representation
+              performas. Captures plot particulars, seller and purchaser
+              information, estate agency stamps, and representation signatures
+              ready to download or print immediately.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-card-icon">🧠</div>
+            <h3>AI Vision Document Extraction</h3>
+            <p>
+              Powered by Google Gemini AI vision models, P Fill extracts names,
+              CNIC numbers, addresses, plot numbers, sectors, and measurements
+              directly from uploaded forms.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-card-icon">🔒</div>
+            <h3>100% Client-Side Privacy Guarantee</h3>
+            <p>
+              All PDF rendering, form compilation, OCR, and data manipulation
+              execute entirely inside your local browser. No property deeds,
+              CNICs, or confidential customer records are ever stored on
+              external web servers.
+            </p>
+          </div>
+        </section>
+
+        <!-- Workflow Overview -->
+        <section class="about-workflow-card">
+          <h3>How It Works</h3>
+          <div class="workflow-steps-row">
+            <div class="workflow-step-box">
+              <div class="workflow-step-num">1</div>
+              <h4>Select Feature</h4>
+              <p>Choose CVT-1 & IT-5 or Dealer Performa.</p>
+            </div>
+            <div class="workflow-step-box">
+              <div class="workflow-step-num">2</div>
+              <h4>Upload or Type Data</h4>
+              <p>
+                Upload forms (image/PDF) for automated AI extraction, or type
+                details manually.
+              </p>
+            </div>
+            <div class="workflow-step-box">
+              <div class="workflow-step-num">3</div>
+              <h4>Download & Print</h4>
+              <p>
+                Preview generated forms and download or print high-resolution
+                official documents instantly.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 0.5rem">
+          <button
+            type="button"
+            id="about-go-home-btn"
+            class="btn btn-primary"
+            style="padding: 0.75rem 1.75rem; font-size: 0.95rem"
+          >
+            🚀 Start Preparing Documents
+          </button>
+        </div>
+      </div>
+
+      <!-- PAGE 3: SEPARATE CONTACT PAGE -->
+      <div id="page-contact" class="spa-page hidden">
+        <section class="page-hero">
+          <span class="hero-badge">✉️ Support & Assistance</span>
+          <h2>Contact Us</h2>
+          <p>
+            Have questions, suggestions, or need help with property form
+            automation? Our team is dedicated to providing fast and reliable
+            support.
+          </p>
+        </section>
+
+        <div class="contact-grid">
+          <!-- Direct Contact Info Card -->
+          <div class="contact-info-card">
+            <div>
+              <h3
+                style="
+                  font-size: 1.2rem;
+                  font-weight: 700;
+                  color: var(--text);
+                  margin-bottom: 0.35rem;
+                "
+              >
+                Get in Touch
+              </h3>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: var(--text-muted);
+                  line-height: 1.5;
+                "
+              >
+                You can reach our official support desk directly via email. We
+                prioritize property dealers, agents, and consultants.
+              </p>
+            </div>
+
+            <div class="contact-email-box">
+              <div style="font-size: 1.75rem; margin-bottom: 0.35rem">✉️</div>
+              <div
+                style="
+                  font-size: 0.8rem;
+                  color: var(--text-muted);
+                  text-transform: uppercase;
+                  letter-spacing: 0.05em;
+                  font-weight: 650;
+                "
+              >
+                Official Support Email
+              </div>
+              <a
+                href="mailto:contact.pfill@gmail.com"
+                class="contact-email-addr"
+                >contact.pfill@gmail.com</a
+              >
+              <div class="contact-email-actions">
+                <button
+                  type="button"
+                  id="contact-page-copy-btn"
+                  class="btn btn-outline"
+                >
+                  📋 Copy Email
+                </button>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.pfill@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="contact-direct-email-btn"
+                  class="btn btn-primary"
+                  >Send Email ↗</a
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: var(--surface-subtle);
+                border: 1px solid var(--border);
+                border-radius: var(--radius);
+                padding: 1.15rem;
+              "
+            >
+              <strong
+                style="
+                  font-size: 0.875rem;
+                  color: var(--text);
+                  display: block;
+                  margin-bottom: 0.35rem;
+                "
+                >⏱️ Response Times</strong
+              >
+              <p
+                style="
+                  font-size: 0.825rem;
+                  color: var(--text-muted);
+                  line-height: 1.5;
+                  margin: 0;
+                "
+              >
+                Inquiries are typically answered within 24 hours. Support hours
+                are Monday to Saturday, 9:00 AM – 7:00 PM PKT.
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Message Form -->
+          <div class="contact-form-card">
+            <h3>Send a Direct Message</h3>
+            <p>
+              Fill out the form below to compose your message directly to our
+              support desk.
+            </p>
+
+            <form id="contact-form" class="contact-form-grid">
+              <div class="field-item">
+                <label class="lbl" for="contact-input-name">Your Name</label>
+                <input
+                  type="text"
+                  id="contact-input-name"
+                  placeholder="e.g. Muhammad Ali"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="field-item">
+                <label class="lbl" for="contact-input-email"
+                  >Your Email Address</label
+                >
+                <input
+                  type="email"
+                  id="contact-input-email"
+                  placeholder="e.g. ali@example.com"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+              <div class="field-item">
+                <label class="lbl" for="contact-input-subject">Subject</label>
+                <input
+                  type="text"
+                  id="contact-input-subject"
+                  placeholder="e.g. Assistance with CVT-1 form"
+                  required
+                />
+              </div>
+
+              <div class="field-item">
+                <label class="lbl" for="contact-input-message">Message</label>
+                <textarea
+                  id="contact-input-message"
+                  placeholder="Describe your question, issue, or feedback..."
+                  required
+                ></textarea>
+              </div>
+
+              <div
+                id="contact-form-feedback"
+                class="test-feedback hidden"
+              ></div>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: flex-end;
+                  margin-top: 0.5rem;
+                "
+              >
+                <button
+                  type="button"
+                  id="contact-send-btn"
+                  class="btn btn-primary"
+                  style="padding: 0.65rem 1.5rem"
+                >
+                  ✉️ Send Email
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 4: SEPARATE TERMS OF SERVICE PAGE -->
+      <div id="page-terms" class="spa-page hidden">
+        <section class="page-hero">
+          <span class="hero-badge">📜 Legal & Policy</span>
+          <h2>Terms of Service</h2>
+          <p>
+            Please review the terms and conditions governing the use of P Fill
+            form automation and document preparation services.
+          </p>
+        </section>
+
+        <section class="terms-card">
+          <div class="terms-section">
+            <h3>1. Acceptance of Terms</h3>
+            <p>
+              By accessing or using P Fill, you acknowledge that you have read,
+              understood, and agree to be bound by these Terms of Service. If
+              you do not agree to these terms, please do not use the
+              application.
+            </p>
+          </div>
+
+          <div class="terms-section">
+            <h3>2. Scope of Services & DHA Focus</h3>
+            <p>
+              P Fill is engineered specifically for DHA (Pakistan) property
+              transactions, real estate consultants, and property dealers. The
+              platform assists in auto-filling and formatting official
+              documents, including Capital Value (CVT-1), Advance (IT-5) forms,
+              and Estate Agency Dealer Performa slips.
+            </p>
+          </div>
+
+          <div class="terms-section">
+            <h3>3. 100% Client-Side Privacy Guarantee</h3>
+            <p>
+              All document rendering, OCR parsing, and coordinate alignment are
+              performed locally inside your web browser. No property deeds, CNIC
+              numbers, addresses, customer records, or financial information are
+              ever uploaded to or stored on external servers by P Fill.
+            </p>
+          </div>
+
+          <div class="terms-section">
+            <h3>4. User Responsibility & Verification</h3>
+            <p>
+              While P Fill utilizes high-precision layout algorithms and AI
+              extraction models, users, estate agents, and consultants remain
+              solely responsible for reviewing and verifying the accuracy and
+              completeness of all data, plot numbers, CNIC numbers, and
+              signatures prior to official submission to authorities.
+            </p>
+          </div>
+
+          <div class="terms-section">
+            <h3>5. Intellectual Property</h3>
+            <p>
+              The software architecture, user interface, brand styling,
+              coordinate configurations, and digital assets of P Fill are
+              proprietary. Reproduction, redistribution, or reverse engineering
+              without prior written authorization is strictly prohibited.
+            </p>
+          </div>
+
+          <div class="terms-section">
+            <h3>6. Limitation of Liability</h3>
+            <p>
+              P Fill is provided on an "as is" and "as available" basis without
+              warranties of any kind. Under no circumstances shall P Fill be
+              liable for any direct, indirect, incidental, or consequential
+              damages resulting from document preparation, typographical
+              discrepancies, or submission delays.
+            </p>
+          </div>
+
+          <div class="terms-section">
+            <h3>7. Contact & Inquiries</h3>
+            <p>
+              If you have questions regarding these Terms of Service, please
+              reach out to our team at
+              <a
+                href="mailto:contact.pfill@gmail.com"
+                style="color: var(--accent-blue); text-decoration: underline"
+                >contact.pfill@gmail.com</a
+              >.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Full Screen Width Footer (Shows on all pages!) -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-col brand-col">
+          <div class="footer-logo-row">
+            <img
+              src="logo.png"
+              alt="P Fill - Property Form Automation Official Logo"
+              class="footer-logo"
+              width="32"
+              height="32"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="footer-brand-title">P Fill</span>
+          </div>
+          <p class="footer-tagline">
+            Automated preparation of official CVT-1 & IT-5 forms and Dealer
+            Performa property records.
+          </p>
+          <div class="footer-privacy-pill">🔒 100% Client-Side Privacy</div>
+        </div>
+
+        <div class="footer-col links-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="/" class="footer-link-btn" id="footer-link-home">Home</a>
+            </li>
+            <li>
+              <a href="/about" class="footer-link-btn" id="footer-link-about"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="/contact"
+                class="footer-link-btn"
+                id="footer-link-contact"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a href="/terms" class="footer-link-btn" id="footer-link-terms"
+                >Terms of Service</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4>Get in Touch</h4>
+          <p class="footer-contact-desc">Questions, feedback or assistance?</p>
+          <a href="mailto:contact.pfill@gmail.com" class="footer-email-link">
+            <span class="email-icon">✉️</span> contact.pfill@gmail.com
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 P Fill. All rights reserved.</span>
+        <span>Version 2.00</span>
+      </div>
+    </footer>
+
+    <!-- PDF Preview Modal (Shared for CVT-1, IT-5 & Dealer Performa) -->
+    <div id="dealer-preview-modal" class="modal hidden">
+      <div class="modal-backdrop" id="dealer-preview-backdrop"></div>
+      <div class="modal-card modal-large">
+        <div class="modal-header">
+          <div class="preview-modal-title">
+            <span class="preview-badge" id="preview-modal-badge"
+              >Official Template</span
+            >
+            <h3 id="preview-modal-title">Document Preview</h3>
+          </div>
+          <button
+            id="dealer-preview-close-btn"
+            class="btn-close"
+            aria-label="Close Preview"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body preview-modal-body">
+          <div id="dealer-preview-loading" class="preview-loading">
+            <div class="spinner"></div>
+            <span id="dealer-preview-loading-text"
+              >Rendering Official Filled Document...</span
+            >
+          </div>
+          <iframe
+            id="dealer-preview-iframe"
+            class="preview-iframe hidden"
+            title="PDF Document Preview"
+          ></iframe>
+        </div>
+        <div class="modal-footer">
+          <span class="preview-note" id="preview-modal-note"
+            >📄 Official Filled Form Preview</span
+          >
+          <div class="modal-actions">
+            <button id="dealer-modal-print-btn" class="btn btn-dark">
+              🖨️ Print
+            </button>
+            <button id="dealer-modal-download-btn" class="btn btn-primary">
+              📄 Download PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Person Role Choice Modal (When file/ID card doesn't specify Seller or Purchaser, or dual 236K files) -->
+    <div id="role-choice-modal" class="modal hidden">
+      <div class="modal-backdrop" id="role-choice-backdrop"></div>
+      <div class="modal-card" style="max-width: 440px; text-align: center">
+        <div
+          class="modal-header"
+          style="justify-content: center; position: relative"
+        >
+          <h3 id="role-choice-title" style="margin: 0; font-size: 1.15rem">
+            Select Role
+          </h3>
+          <button
+            id="role-choice-close-btn"
+            class="btn-close"
+            aria-label="Close"
+            style="position: absolute; right: 1rem"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body" style="padding: 1.25rem 1rem">
+          <p
+            id="role-choice-prompt-msg"
+            style="
+              margin: 0 0 0.5rem 0;
+              font-size: 0.9rem;
+              color: var(--text-muted, #64748b);
+            "
+          >
+            Please choose whether this person is the Seller or Purchaser:
+          </p>
+          <div
+            id="role-choice-single-card"
+            style="
+              margin: 0.75rem 0;
+              padding: 0.85rem 1rem;
+              background: var(--bg-surface-secondary, rgba(0, 0, 0, 0.04));
+              border-radius: 8px;
+              border: 1px solid var(--border-color, #e2e8f0);
+            "
+          >
+            <strong
+              id="role-choice-person-name"
+              style="
+                font-size: 1.25rem;
+                color: var(--text-primary, #0f172a);
+                display: block;
+                word-break: break-word;
+              "
+              >Muhammad Aslam</strong
+            >
+            <span
+              id="role-choice-person-cnic"
+              style="
+                font-size: 0.9rem;
+                color: var(--text-muted, #64748b);
+                font-family: ui-monospace, monospace;
+                display: block;
+                margin-top: 0.25rem;
+              "
+              >35201-1234567-1</span
+            >
+          </div>
+          <div
+            id="role-choice-dual-container"
+            class="hidden"
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 0.75rem;
+              margin: 0.75rem 0;
+            "
+          ></div>
+        </div>
+        <div
+          class="modal-footer"
+          id="role-choice-modal-footer"
+          style="
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            padding: 0.75rem 1rem 1.25rem;
+          "
+        >
+          <button
+            type="button"
+            id="role-choice-seller-btn"
+            class="btn btn-outline"
+            style="flex: 1; padding: 0.65rem; font-weight: 600"
+          >
+            👤 Seller (Owner)
+          </button>
+          <button
+            type="button"
+            id="role-choice-purchaser-btn"
+            class="btn btn-primary"
+            style="flex: 1; padding: 0.65rem; font-weight: 600"
+          >
+            👤 Purchaser (Buyer)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- API Key Modal -->
+    <div id="ai-modal" class="modal hidden">
+      <div class="modal-backdrop" id="modal-backdrop"></div>
+      <div class="modal-card">
+        <div class="modal-header">
+          <h3>Gemini API Key Settings</h3>
+          <button id="modal-close-btn" class="btn-close">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-field">
+            <label class="lbl" for="gemini-key-input">API Key</label>
+            <input
+              type="password"
+              id="gemini-key-input"
+              placeholder="Paste your Gemini API key..."
+              autocomplete="off"
+            />
+            <span class="field-help"
+              >Default system key is active. Enter a custom key above to use
+              your own, or leave empty to use default.</span
+            >
+          </div>
+          <div id="key-test-feedback" class="test-feedback hidden"></div>
+        </div>
+        <div class="modal-footer">
+          <a
+            href="https://aistudio.google.com/app/apikey"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="link-btn"
+            >Get Free API Key ↗</a
+          >
+          <div class="modal-actions">
+            <button id="test-key-btn" class="btn btn-outline">Test</button>
+            <button id="save-key-btn" class="btn btn-dark">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Professional Version Badge -->
+    <div class="version-badge" title="P Fill Version 2.00">
+      <span class="version-dot"></span>
+      <span class="version-label">Version 2.00</span>
+    </div>
+
+    <script defer src="app.js?v=43.0"></script>
+    <script>
+      // Universal Cross-Context Navigation Listener for Live Sandbox (Instant Response)
+      window.addEventListener('message', function(event) {
+        if (!event.data) return;
+
+        function openManualCvt() {
+          // 1. Ensure we are on Home page & switch to CVT-1 and IT-5 module view
+          if (typeof switchModuleView === 'function') {
+            try { switchModuleView('cvt-it5'); } catch (e) {}
+          }
+          var cvtTabBtn = document.getElementById('tab-btn-cvt-it5');
+          if (cvtTabBtn) cvtTabBtn.classList.add('active');
+          var dealerTabBtn = document.getElementById('tab-btn-dealer-performa');
+          if (dealerTabBtn) dealerTabBtn.classList.remove('active');
+          var viewCvt = document.getElementById('view-cvt-it5');
+          if (viewCvt) viewCvt.classList.remove('hidden');
+          var viewDealer = document.getElementById('view-dealer-performa');
+          if (viewDealer) viewDealer.classList.add('hidden');
+          var welcome = document.getElementById('welcome-prompt-card');
+          if (welcome) welcome.classList.add('hidden');
+
+          // 2. Open manual entry form results grid
+          if (typeof showResultsGrid === 'function') {
+            try { showResultsGrid(); } catch (e) {}
+          }
+          var resGrid = document.getElementById('results-grid');
+          if (resGrid) resGrid.classList.remove('hidden');
+
+          // 3. Show manual mode notice banner
+          if (typeof showManualNotice === 'function') {
+            try {
+              showManualNotice('✍️ Manual Entry Mode: You can type the details directly in the fields below and download the filled forms once all fields are complete.', false);
+            } catch (e) {}
+          }
+          var notice = document.getElementById('manual-notice');
+          if (notice) notice.classList.remove('hidden');
+
+          // 4. Close settings modal if open
+          var closeBtn = document.getElementById('modal-close-btn');
+          var modal = document.getElementById('ai-modal');
+          if (modal && !modal.classList.contains('hidden') && closeBtn) closeBtn.click();
+
+          // 5. Instantly scroll to manual entry fields (0ms delay)
+          var target = document.getElementById('results-grid') || notice;
+          if (target) {
+            var targetY = target.getBoundingClientRect().top + window.pageYOffset - 25;
+            window.scrollTo({ top: Math.max(0, targetY), behavior: 'auto' });
+          }
+          var firstInput = document.getElementById('purchaser-name');
+          if (firstInput) {
+            try { firstInput.focus(); } catch (e) {}
+          }
+        }
+
+        if (event.data.action === 'open_manual_cvt' || event.data.targetId === 'manual-mode-card') {
+          openManualCvt();
+          return;
+        }
+
+        if (event.data.action === 'scroll_to') {
+          var targetId = event.data.targetId;
+          if (targetId === 'top') {
+            window.scrollTo({ top: 0, behavior: 'auto' });
+            return;
+          }
+          var el = document.getElementById(targetId);
+          if (el) {
+            var targetY = el.getBoundingClientRect().top + window.pageYOffset - 35;
+            window.scrollTo({ top: Math.max(0, targetY), behavior: 'auto' });
+          }
+        }
+
+        if (event.data.action === 'open_settings') {
+          var apiBtn = document.getElementById('ai-settings-btn');
+          if (apiBtn) apiBtn.click();
+        }
+
+        if (event.data.action === 'close_settings') {
+          var closeBtn = document.getElementById('modal-close-btn');
+          var modal = document.getElementById('ai-modal');
+          if (modal && !modal.classList.contains('hidden') && closeBtn) {
+            closeBtn.click();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

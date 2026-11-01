@@ -1,0 +1,1238 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adeel Usman | Frontend Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Adeel Usman — Frontend Developer. Academic honors, skills, and production web applications."
+    />
+
+    <!-- Favicon using Adeel Usman's real portrait photo cropped in a circle -->
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/adeel-circle-avatar.png" />
+
+    <!-- Google Fonts (Preconnect + Non-blocking Parallel Load) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Ambient 3D Cyber Light Orbs -->
+    <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+
+    <!-- Interactive 3D Canvas Background (Particles & Rotating 3D Polyhedron) -->
+    <canvas id="bg3dCanvas" class="bg-3d-canvas" aria-hidden="true"></canvas>
+
+    <!-- Top Navigation Header -->
+    <header class="header">
+      <div class="container nav-wrap">
+        <a href="#" class="logo" aria-label="Adeel Usman">
+          <img
+            src="assets/adeel-circle-avatar.png"
+            alt="Adeel Usman"
+            class="logo-avatar"
+          />
+          <span class="logo-name">Adeel Usman</span>
+        </a>
+
+        <nav id="mainNav" class="main-nav">
+          <ul class="nav-links" id="navLinks">
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            id="themeToggle"
+            class="theme-btn"
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            <span class="theme-icon">☀️</span>
+            <span class="theme-label">Light</span>
+          </button>
+          <button
+            id="mobileMenuToggle"
+            class="mobile-menu-btn"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Hero Text -->
+          <div class="hero-content-col flow-from-left">
+            <h1>Hi, I'm <span class="highlight">Adeel Usman</span></h1>
+            <div class="hero-role-wrap">
+              <span class="hero-role-tag"
+                ><span class="live-pulse-dot"></span>⚡ Frontend Developer</span
+              >
+            </div>
+            <p class="hero-text">
+              Passionate frontend developer from Lahore Cantt. Below you will
+              find my academic records, core skills, and live production
+              websites.
+            </p>
+
+            <!-- Direct Contact Quick Bar -->
+            <div class="contact-quick-bar">
+              <a
+                href="tel:+923284131583"
+                class="contact-pill"
+                title="Call Adeel Usman"
+              >
+                <span class="contact-pill-icon">📞</span>
+                <span>+92 328 4131583</span>
+              </a>
+              <a
+                href="https://wa.me/923284131583"
+                target="_blank"
+                rel="noopener"
+                class="contact-pill"
+                title="WhatsApp Adeel Usman"
+              >
+                <span class="contact-pill-icon">💬</span>
+                <span>WhatsApp</span>
+              </a>
+              <a
+                href="mailto:adeelu001@gmail.com"
+                class="contact-pill"
+                title="Email Adeel Usman"
+              >
+                <span class="contact-pill-icon">✉️</span>
+                <span>adeelu001@gmail.com</span>
+              </a>
+            </div>
+
+            <!-- 3D Glass Metrics Dashboard -->
+            <div class="hero-metrics-grid">
+              <div class="hero-metric-card" data-tilt>
+                <div class="metric-num">
+                  <span class="counter-val" data-target="95.3">95.3</span>%
+                </div>
+                <div class="metric-label">Matric (SSC)</div>
+              </div>
+              <div class="hero-metric-card" data-tilt>
+                <div class="metric-num">
+                  <span class="counter-val" data-target="88.7">88.7</span>%
+                </div>
+                <div class="metric-label">Intermediate (HSSC)</div>
+              </div>
+              <div class="hero-metric-card" data-tilt>
+                <div class="metric-num">
+                  <span class="counter-val" data-target="4">4</span>+
+                </div>
+                <div class="metric-label">Production Websites</div>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary"
+                >Explore Live Projects ↓</a
+              >
+              <a href="#education" class="btn btn-outline">Academic Records</a>
+            </div>
+          </div>
+
+          <!-- Portrait Photo with Floating 3D Badges & Continuously Moving Cyber Yellow Splash Border -->
+          <div class="hero-photo-wrap flow-from-right" data-tilt>
+            <!-- Floating 3D Tech Chips -->
+            <div class="hero-3d-chip chip-top-left" data-tilt-depth="35">
+              <span class="chip-icon">🎖️</span>
+              <div class="chip-info">
+                <span class="chip-val">95.3%</span>
+                <span class="chip-label">Matric A1 (SSC)</span>
+              </div>
+            </div>
+
+            <div class="hero-3d-chip chip-bottom-right" data-tilt-depth="40">
+              <span class="chip-icon">🚀</span>
+              <div class="chip-info">
+                <span class="chip-val">4+ Live</span>
+                <span class="chip-label">Production Apps</span>
+              </div>
+            </div>
+
+            <div class="hero-3d-chip chip-bottom-left" data-tilt-depth="30">
+              <span class="chip-icon">⚡</span>
+              <div class="chip-info">
+                <span class="chip-val">React &amp; JS</span>
+                <span class="chip-label">Modern Frontend</span>
+              </div>
+            </div>
+
+            <div class="photo-card" title="Adeel Usman — Frontend Developer">
+              <div class="photo-inner">
+                <img
+                  src="assets/adeel-photo.jpg"
+                  alt="Adeel Usman"
+                  class="photo-img"
+                />
+                <div class="photo-status-badge">
+                  <span class="photo-status-pulse"></span>
+                  <span>Available for Projects</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section (Floating In Air Cards with Result Sheet Modals) -->
+    <section class="section" id="education">
+      <div class="container">
+        <h2 class="section-title flow-from-left">
+          Academic <span class="yellow-text">Excellence</span>
+        </h2>
+        <p class="section-sub flow-from-right">
+          Academic qualifications and verified examination honors
+        </p>
+
+        <div class="edu-grid">
+          <!-- Matric Card -->
+          <div class="edu-card edu-card-matric flow-from-left" data-tilt>
+            <div class="edu-badge-verified">
+              <span class="verified-icon">✓</span>
+              <span>Verified Board Record</span>
+            </div>
+            <div class="edu-header">
+              <span class="edu-level">Matric (SSC)</span>
+              <span class="edu-score">95% (1049/1100)</span>
+            </div>
+            <div class="edu-body">
+              <div class="edu-school">FG Abid Majeed Public High School</div>
+              <div class="edu-location">Lahore Cantt</div>
+              <div class="edu-meta">Roll No: 1029363 • Grade A1 (Science)</div>
+            </div>
+            <div class="edu-card-footer">
+              <button
+                class="btn btn-result-sheet"
+                data-result-img="assets/education/matric-result-sheet.jpg"
+                data-title="Matric (SSC) Result Card — 1049 / 1100 (95.3%)"
+              >
+                <span class="btn-icon">📄</span>
+                <span>View Result Sheet</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Intermediate Card -->
+          <div class="edu-card edu-card-inter flow-from-right" data-tilt>
+            <div class="edu-badge-verified">
+              <span class="verified-icon">✓</span>
+              <span>Verified Board Record</span>
+            </div>
+            <div class="edu-header">
+              <span class="edu-level">Intermediate (HSSC)</span>
+              <span class="edu-score">89% (976/1100)</span>
+            </div>
+            <div class="edu-body">
+              <div class="edu-school">FG Degree College</div>
+              <div class="edu-location">Aziz Bhatti Road, Lahore Cantt</div>
+              <div class="edu-meta">Roll No: 5124605 • Grade A1</div>
+            </div>
+            <div class="edu-card-footer">
+              <button
+                class="btn btn-result-sheet"
+                data-result-img="assets/education/inter-result-sheet.jpg"
+                data-title="Intermediate (HSSC) Result Card — 976 / 1100 (88.7%)"
+              >
+                <span class="btn-icon">📄</span>
+                <span>View Result Sheet</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title flow-from-left">
+          Core <span class="yellow-text">Skills</span>
+        </h2>
+        <p class="section-sub flow-from-right">
+          Frontend technologies used in my production applications
+        </p>
+
+        <div class="skills-grid">
+          <!-- Skill 1: HTML -->
+          <div class="skill-card flow-from-left" data-tilt>
+            <div class="skill-card-top">
+              <div class="skill-icon-box">
+                <span class="skill-icon">🌐</span>
+              </div>
+              <span class="skill-badge">Structure</span>
+            </div>
+            <div class="skill-details">
+              <h3 class="skill-title">HTML</h3>
+              <p class="skill-desc">
+                Semantic HTML5, Accessible DOM, SEO &amp; Modern Forms
+              </p>
+            </div>
+          </div>
+
+          <!-- Skill 2: CSS -->
+          <div class="skill-card flow-from-right" data-tilt>
+            <div class="skill-card-top">
+              <div class="skill-icon-box">
+                <span class="skill-icon">🎨</span>
+              </div>
+              <span class="skill-badge">Styling</span>
+            </div>
+            <div class="skill-details">
+              <h3 class="skill-title">CSS</h3>
+              <p class="skill-desc">
+                Responsive Layouts, 3D Transforms, Fluid Animations, Flex/Grid
+              </p>
+            </div>
+          </div>
+
+          <!-- Skill 3: JS (JavaScript) -->
+          <div class="skill-card flow-from-left" data-tilt>
+            <div class="skill-card-top">
+              <div class="skill-icon-box">
+                <span class="skill-icon">⚡</span>
+              </div>
+              <span class="skill-badge">Logic &amp; APIs</span>
+            </div>
+            <div class="skill-details">
+              <h3 class="skill-title">JS (JavaScript)</h3>
+              <p class="skill-desc">
+                ES6+ Features, DOM Engine, Async/APIs, Dynamic UI Logic
+              </p>
+            </div>
+          </div>
+
+          <!-- Skill 4: React.js -->
+          <div class="skill-card flow-from-right" data-tilt>
+            <div class="skill-card-top">
+              <div class="skill-icon-box">
+                <span class="skill-icon">⚛️</span>
+              </div>
+              <span class="skill-badge">Framework</span>
+            </div>
+            <div class="skill-details">
+              <h3 class="skill-title">React.js</h3>
+              <p class="skill-desc">
+                Components, State Hooks, Props Architecture &amp; Fast SPAs
+              </p>
+            </div>
+          </div>
+
+          <!-- Skill 5: GitHub Version Control -->
+          <div class="skill-card flow-from-left" data-tilt>
+            <div class="skill-card-top">
+              <div class="skill-icon-box">
+                <svg
+                  class="skill-icon-svg"
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+              </div>
+              <span class="skill-badge">Version Control</span>
+            </div>
+            <div class="skill-details">
+              <h3 class="skill-title">GitHub Version Control</h3>
+              <p class="skill-desc">
+                Git Workflows, Branch Management, Pull Requests &amp; Team
+                Collaboration
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section with 3D Rotating Polygon Showcases (Floating In Air) -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title flow-from-left">
+          Featured <span class="yellow-text">Websites</span>
+        </h2>
+        <p class="section-sub flow-from-right">
+          Production web applications built by Adeel Usman — featuring live
+          interactive sandboxes with instant navigation
+        </p>
+
+        <div class="projects-list">
+          <!-- ================================================================
+             PROJECT 1: VANTRIA PRIVATE TRANSIT (LIVE INTERACTIVE SANDBOX IFRAME)
+             ================================================================ -->
+          <article class="project-item flow-from-left">
+            <div class="project-iframe-wrap vantria-sandbox">
+              <!-- Interactive Sandbox Browser Chrome -->
+              <div class="sandbox-browser-bar">
+                <div class="sandbox-window-controls">
+                  <span
+                    class="sandbox-dot dot-red"
+                    title="Close preview"
+                  ></span>
+                  <span class="sandbox-dot dot-yellow" title="Minimize"></span>
+                  <span class="sandbox-dot dot-green" title="Maximize"></span>
+                </div>
+                <div class="sandbox-nav-btns">
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-back"
+                    id="vantriaBackBtn"
+                    title="Back in Frame"
+                    aria-label="Back"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-forward"
+                    id="vantriaFwdBtn"
+                    title="Forward in Frame"
+                    aria-label="Forward"
+                  >
+                    ›
+                  </button>
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-reload"
+                    id="vantriaReloadBtn"
+                    title="Reload Sandbox"
+                    aria-label="Reload"
+                  >
+                    ⟳
+                  </button>
+                </div>
+                <div class="sandbox-address-box">
+                  <span class="sandbox-lock-icon">🔒</span>
+                  <span class="sandbox-url-text" id="vantriaUrlDisplay"
+                    >https://vantriaprivatetransit-28117.web.app/</span
+                  >
+                  <span class="sandbox-status-pill"
+                    ><span class="pulse-live"></span> Live Sandbox</span
+                  >
+                </div>
+                <div class="sandbox-actions">
+                  <a
+                    href="https://vantriaprivatetransit-28117.web.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="sandbox-action-btn"
+                    title="Open Full Site in New Tab"
+                    aria-label="Open in new tab"
+                    >↗</a
+                  >
+                </div>
+              </div>
+
+              <!-- Responsive Iframe Viewport Container -->
+              <div
+                class="sandbox-iframe-container"
+                id="vantriaSandboxContainer"
+              >
+                <!-- High-Tech Cyber Loader -->
+                <div class="sandbox-loader" id="vantriaLoader">
+                  <div class="loader-visual">
+                    <div class="loader-orbit-outer"></div>
+                    <div class="loader-orbit-inner"></div>
+                    <div class="loader-core">
+                      <span class="core-dot"></span>
+                    </div>
+                  </div>
+                  <div class="loader-text-group">
+                    <span class="loader-title">Connecting to Live Sandbox</span>
+                    <span class="loader-subtitle"
+                      >Loading Vantria Private Transit application...</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Cached Live Viewport Iframes -->
+                <iframe
+                  id="vantriaIframeHome"
+                  class="sandbox-iframe active"
+                  src="vantria-preview.html"
+                  title="Vantria Private Transit — Home &amp; Booking"
+                  loading="eager"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+                >
+                </iframe>
+
+                <iframe
+                  id="vantriaIframeFleet"
+                  class="sandbox-iframe"
+                  data-src="https://vantriaprivatetransit-28117.web.app/fleet.html"
+                  title="Vantria Private Transit — Chauffeur Fleet"
+                  loading="lazy"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+                >
+                </iframe>
+
+                <iframe
+                  id="vantriaIframeContact"
+                  class="sandbox-iframe"
+                  data-src="https://vantriaprivatetransit-28117.web.app/contact.html"
+                  title="Vantria Private Transit — Contact &amp; Support"
+                  loading="lazy"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+                >
+                </iframe>
+              </div>
+
+              <!-- Bottom Interactive Helper Bar -->
+              <div class="sandbox-footer-bar">
+                <span class="sandbox-hint-text"
+                  >💡 Live Interactive Sandbox: Click, scroll, or test bookings
+                  directly inside</span
+                >
+                <button
+                  type="button"
+                  class="sandbox-reset-btn"
+                  id="vantriaResetBtn"
+                  title="Reset to Home View"
+                >
+                  Reset View
+                </button>
+              </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="project-content flow-from-right">
+              <span class="project-tag">Chauffeur &amp; Airport Transfers</span>
+              <h3 class="project-title">Vantria Private Transit</h3>
+              <p class="project-desc">
+                Vantria Private Transit is a live car booking and private
+                transit platform built for Reading, UK. Commissioned on the
+                request of an employee of a contractor for Wellington Cars of
+                Wokingham, this production website leverages AI-driven web
+                engineering to provide seamless ride bookings and quotes via
+                email.
+              </p>
+              <ul class="project-details-list">
+                <li>
+                  Comprehensive private transit and airport transfer booking
+                  system across Reading and major UK routes.
+                </li>
+                <li>
+                  Integrated EmailJS API for sending direct emails from the
+                  website, handling ride bookings, and getting quotes through
+                  email.
+                </li>
+                <li>Built using AI, live and deployed using Vercel.</li>
+                <li>
+                  Optimized with Search Engine Optimization (SEO) allowing
+                  discovery by name, verified and added to Google Search
+                  Console.
+                </li>
+              </ul>
+              <a
+                href="https://vantriaprivatetransit-28117.web.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link-btn"
+              >
+                <span>Visit Website</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ================================================================
+             PROJECT 2: P FILL (LIVE INTERACTIVE SANDBOX)
+             ================================================================ -->
+          <article class="project-item flow-from-right">
+            <div class="project-iframe-wrap pfill-sandbox">
+              <!-- Sandbox Browser Chrome Header -->
+              <div class="sandbox-browser-bar">
+                <div class="sandbox-window-controls">
+                  <span
+                    class="sandbox-dot dot-red"
+                    title="Close preview"
+                  ></span>
+                  <span class="sandbox-dot dot-yellow" title="Minimize"></span>
+                  <span class="sandbox-dot dot-green" title="Maximize"></span>
+                </div>
+                <div class="sandbox-nav-btns">
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-back"
+                    id="pfillBackBtn"
+                    title="Back in Frame"
+                    aria-label="Back"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-forward"
+                    id="pfillFwdBtn"
+                    title="Forward in Frame"
+                    aria-label="Forward"
+                  >
+                    ›
+                  </button>
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-reload"
+                    id="pfillReloadBtn"
+                    title="Reload Sandbox"
+                    aria-label="Reload"
+                  >
+                    ⟳
+                  </button>
+                </div>
+                <div class="sandbox-address-box">
+                  <span class="sandbox-lock-icon">🔒</span>
+                  <span class="sandbox-url-text" id="pfillUrlDisplay"
+                    >https://paperfill.pages.dev/</span
+                  >
+                  <span class="sandbox-status-pill"
+                    ><span class="pulse-live"></span> Live Sandbox</span
+                  >
+                </div>
+                <div class="sandbox-actions">
+                  <a
+                    href="https://paperfill.pages.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="sandbox-action-btn"
+                    title="Open Full Site in New Tab"
+                    aria-label="Open in new tab"
+                    >↗</a
+                  >
+                </div>
+              </div>
+
+              <!-- Responsive Iframe Viewport Container -->
+              <div class="sandbox-iframe-container" id="pfillSandboxContainer">
+                <!-- High-Tech Cyber Loader -->
+                <div class="sandbox-loader" id="pfillLoader">
+                  <div class="loader-visual">
+                    <div class="loader-orbit-outer"></div>
+                    <div class="loader-orbit-inner"></div>
+                    <div class="loader-core">
+                      <span class="core-dot"></span>
+                    </div>
+                  </div>
+                  <div class="loader-text-group">
+                    <span class="loader-title">Connecting to Live Sandbox</span>
+                    <span class="loader-subtitle"
+                      >Loading Paper Fill (PFill) AI application...</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Live Viewport Iframe -->
+                <iframe
+                  id="pfillIframe"
+                  class="sandbox-iframe active"
+                  src="paperfill-preview.html"
+                  title="Paper Fill (PFill) — Live Interactive Sandbox"
+                  loading="eager"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+                >
+                </iframe>
+              </div>
+
+              <!-- Bottom Interactive Helper Bar -->
+              <div class="sandbox-footer-bar">
+                <span class="sandbox-hint-text"
+                  >💡 Live Interactive Sandbox: Test document upload, manual
+                  form inputs, or API configuration</span
+                >
+                <button
+                  type="button"
+                  class="sandbox-reset-btn"
+                  id="pfillResetBtn"
+                  title="Reset to Home View"
+                >
+                  Reset View
+                </button>
+              </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="project-content flow-from-left">
+              <span class="project-tag"
+                >AI Property Tax &amp; Document Automation</span
+              >
+              <h3 class="project-title">Paper Fill (PFill)</h3>
+              <p class="project-desc">
+                Paper Fill (abbreviated as PFill) is an intelligent document
+                automation web application built using AI on the demand of an
+                employee of a real estate dealer working in DHA Lahore Cantt to
+                streamline official property tax documentation and dealer forms.
+              </p>
+              <ul class="project-details-list">
+                <li>
+                  <strong>Version 1:</strong> Auto-fills official Pakistani tax
+                  forms (CVT-1 and IT-5) by extracting purchaser, seller, and
+                  plot data from forwarding letters using the Gemini API.
+                </li>
+                <li>
+                  <strong>Version 2:</strong> Added the feature of filling
+                  dealer performa, alongside universal data extraction from any
+                  form (ID Cards / CNIC, Forwarding Letters, Transfer Letters,
+                  etc.).
+                </li>
+                <li>
+                  Built using AI, live and deployed on Cloudflare Pages using
+                  GitHub CI/CD repository integration.
+                </li>
+              </ul>
+              <a
+                href="https://paperfill.pages.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link-btn"
+              >
+                <span>Visit Website</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- ================================================================
+             PROJECT 3: GJ PRACTICE (LIVE INTERACTIVE SANDBOX)
+             ================================================================ -->
+          <article class="project-item flow-from-left">
+            <div class="project-iframe-wrap gj-sandbox">
+              <!-- Sandbox Browser Chrome Header -->
+              <div class="sandbox-browser-bar">
+                <div class="sandbox-window-controls">
+                  <span
+                    class="sandbox-dot dot-red"
+                    title="Close preview"
+                  ></span>
+                  <span class="sandbox-dot dot-yellow" title="Minimize"></span>
+                  <span class="sandbox-dot dot-green" title="Maximize"></span>
+                </div>
+                <div class="sandbox-nav-btns">
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-back"
+                    id="gjBackBtn"
+                    title="Back in Frame"
+                    aria-label="Back"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-forward"
+                    id="gjFwdBtn"
+                    title="Forward in Frame"
+                    aria-label="Forward"
+                  >
+                    ›
+                  </button>
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-reload"
+                    id="gjReloadBtn"
+                    title="Reload Sandbox"
+                    aria-label="Reload"
+                  >
+                    ⟳
+                  </button>
+                </div>
+                <div class="sandbox-address-box">
+                  <span class="sandbox-lock-icon">🔒</span>
+                  <span class="sandbox-url-text" id="gjUrlDisplay"
+                    >https://gjpractice.pages.dev/</span
+                  >
+                  <span class="sandbox-status-pill"
+                    ><span class="pulse-live"></span> Live Sandbox</span
+                  >
+                </div>
+                <div class="sandbox-actions">
+                  <a
+                    href="https://gjpractice.pages.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="sandbox-action-btn"
+                    title="Open Full Site in New Tab"
+                    aria-label="Open in new tab"
+                    >↗</a
+                  >
+                </div>
+              </div>
+
+              <!-- Responsive Iframe Viewport Container -->
+              <div class="sandbox-iframe-container" id="gjSandboxContainer">
+                <!-- High-Tech Cyber Loader -->
+                <div class="sandbox-loader" id="gjLoader">
+                  <div class="loader-visual">
+                    <div class="loader-orbit-outer"></div>
+                    <div class="loader-orbit-inner"></div>
+                    <div class="loader-core">
+                      <span class="core-dot"></span>
+                    </div>
+                  </div>
+                  <div class="loader-text-group">
+                    <span class="loader-title">Connecting to Live Sandbox</span>
+                    <span class="loader-subtitle"
+                      >Loading Government Job Practice application...</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Live Viewport Iframe -->
+                <iframe
+                  id="gjIframe"
+                  class="sandbox-iframe active"
+                  src="gjpractice-preview.html"
+                  title="Government Job Practice (GJ Practice) — Live Interactive Sandbox"
+                  loading="eager"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+                >
+                </iframe>
+              </div>
+
+              <!-- Bottom Interactive Helper Bar -->
+              <div class="sandbox-footer-bar">
+                <span class="sandbox-hint-text"
+                  >💡 Live Interactive Sandbox: Test psychological exam
+                  countdown timers, drills, or word logs</span
+                >
+                <button
+                  type="button"
+                  class="sandbox-reset-btn"
+                  id="gjResetBtn"
+                  title="Reset to Home View"
+                >
+                  Reset View
+                </button>
+              </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="project-content flow-from-right">
+              <span class="project-tag"
+                >Armed Forces &amp; ISSB Preparation</span
+              >
+              <h3 class="project-title">
+                Government Job Practice (GJ Practice)
+              </h3>
+              <p class="project-desc">
+                Government Job Practice (abbreviated as GJ Practice) is a
+                comprehensive online preparation platform built using AI out of
+                personal interest, specially made for candidates preparing for
+                Armed Forces ISSB psychological tests.
+              </p>
+              <ul class="project-details-list">
+                <li>
+                  Complete psychological test coverage: Word Association Test
+                  (WAT), Picture Story (TAT), and Pointer Story completion.
+                </li>
+                <li>
+                  Realistic examination drill simulations with 10-second
+                  standard timers, pen &amp; paper prompt guidance, and detailed
+                  session summaries.
+                </li>
+                <li>
+                  Built using AI, live and deployed on Cloudflare Pages using
+                  GitHub in the exact same streamlined manner as PFill.
+                </li>
+              </ul>
+              <a
+                href="https://gjpractice.pages.dev/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link-btn"
+              >
+                <span>Visit Website</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </article>
+          <!-- ================================================================
+             PROJECT 4: WEATHERNOW (LIVE INTERACTIVE SANDBOX)
+             ================================================================ -->
+          <article class="project-item flow-from-right">
+            <div class="project-iframe-wrap weather-sandbox">
+              <!-- Sandbox Browser Chrome Header -->
+              <div class="sandbox-browser-bar">
+                <div class="sandbox-window-controls">
+                  <span
+                    class="sandbox-dot dot-red"
+                    title="Close preview"
+                  ></span>
+                  <span class="sandbox-dot dot-yellow" title="Minimize"></span>
+                  <span class="sandbox-dot dot-green" title="Maximize"></span>
+                </div>
+                <div class="sandbox-nav-btns">
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-back"
+                    id="weatherBackBtn"
+                    title="Back in Frame"
+                    aria-label="Back"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-forward"
+                    id="weatherFwdBtn"
+                    title="Forward in Frame"
+                    aria-label="Forward"
+                  >
+                    ›
+                  </button>
+                  <button
+                    type="button"
+                    class="sandbox-nav-btn btn-reload"
+                    id="weatherReloadBtn"
+                    title="Reload Sandbox"
+                    aria-label="Reload"
+                  >
+                    ⟳
+                  </button>
+                </div>
+                <div class="sandbox-address-box">
+                  <span class="sandbox-lock-icon">🔒</span>
+                  <span class="sandbox-url-text" id="weatherUrlDisplay"
+                    >https://main.d2jet8k9ib6fge.amplifyapp.com/</span
+                  >
+                  <span class="sandbox-status-pill"
+                    ><span class="pulse-live"></span> Live Sandbox</span
+                  >
+                </div>
+                <div class="sandbox-actions">
+                  <a
+                    href="https://main.d2jet8k9ib6fge.amplifyapp.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="sandbox-action-btn"
+                    title="Open Full Site in New Tab"
+                    aria-label="Open in new tab"
+                    >↗</a
+                  >
+                </div>
+              </div>
+
+              <!-- Responsive Iframe Viewport Container -->
+              <div class="sandbox-iframe-container" id="weatherSandboxContainer">
+                <!-- High-Tech Cyber Loader -->
+                <div class="sandbox-loader" id="weatherLoader">
+                  <div class="loader-visual">
+                    <div class="loader-orbit-outer"></div>
+                    <div class="loader-orbit-inner"></div>
+                    <div class="loader-core">
+                      <span class="core-dot"></span>
+                    </div>
+                  </div>
+                  <div class="loader-text-group">
+                    <span class="loader-title">Connecting to Live Sandbox</span>
+                    <span class="loader-subtitle"
+                      >Loading WeatherNow application...</span
+                    >
+                  </div>
+                </div>
+
+                <!-- Live Viewport Iframe -->
+                <iframe
+                  id="weatherIframe"
+                  class="sandbox-iframe active"
+                  src="weathernow-preview.html"
+                  title="WeatherNow — Live Interactive Sandbox"
+                  loading="eager"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"
+                >
+                </iframe>
+              </div>
+
+              <!-- Bottom Interactive Helper Bar -->
+              <div class="sandbox-footer-bar">
+                <span class="sandbox-hint-text"
+                  >💡 Live Interactive Sandbox: Search any city or click shortcuts to test live weather data</span
+                >
+                <button
+                  type="button"
+                  class="sandbox-reset-btn"
+                  id="weatherResetBtn"
+                  title="Reset to Home View"
+                >
+                  Reset View
+                </button>
+              </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="project-content flow-from-left">
+              <span class="project-tag"
+                >Real-Time Weather &amp; REST API Integration</span
+              >
+              <h3 class="project-title">
+                WeatherNow
+              </h3>
+              <p class="project-desc">
+                WeatherNow is a real-time global weather forecasting web application created for practice as the foundational first project integrating an external REST API. Built to deliver instant weather intelligence for any city worldwide, it demonstrates dynamic data fetching, responsive glassmorphism UI design, and cloud hosting.
+              </p>
+              <ul class="project-details-list">
+                <li>
+                  Built for hands-on practice as the foundational first web engineering project featuring external REST API integration (OpenWeather via RapidAPI).
+                </li>
+                <li>
+                  Provides instant real-time weather metrics including temperature, feels-like calculations, sky conditions, humidity levels, and wind speed for any global city.
+                </li>
+                <li>
+                  Engineered with dynamic animated atmospheric visuals, responsive dark frosted-glass cards, and quick city search shortcuts.
+                </li>
+                <li>
+                  Live and deployed using AWS Amplify (Amazon Web Services) with seamless cloud hosting and continuous deployment.
+                </li>
+              </ul>
+              <a
+                href="https://main.d2jet8k9ib6fge.amplifyapp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link-btn"
+              >
+                <span>Visit Website</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <h2 class="section-title flow-from-left">
+          Get In <span class="yellow-text">Touch</span>
+        </h2>
+        <p class="section-sub flow-from-right">
+          Feel free to reach out directly via phone, WhatsApp, or email
+        </p>
+
+        <div class="contact-card-grid">
+          <!-- Phone Card -->
+          <a
+            href="tel:+923284131583"
+            class="contact-card flow-from-left"
+            data-tilt
+          >
+            <div class="contact-card-icon">📞</div>
+            <div>
+              <div class="contact-card-title">Direct Phone</div>
+              <div class="contact-card-val">+92 328 4131583</div>
+            </div>
+          </a>
+
+          <!-- WhatsApp Card -->
+          <a
+            href="https://wa.me/923284131583"
+            target="_blank"
+            rel="noopener"
+            class="contact-card flow-from-right"
+            data-tilt
+          >
+            <div class="contact-card-icon">💬</div>
+            <div>
+              <div class="contact-card-title">WhatsApp Chat</div>
+              <div class="contact-card-val">+92 328 4131583</div>
+            </div>
+          </a>
+
+          <!-- Email Card -->
+          <a
+            href="mailto:adeelu001@gmail.com"
+            class="contact-card flow-from-left"
+            data-tilt
+          >
+            <div class="contact-card-icon">✉️</div>
+            <div>
+              <div class="contact-card-title">Direct Email</div>
+              <div class="contact-card-val">adeelu001@gmail.com</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fullscreen Lightbox Modal (For Screenshots) -->
+    <div
+      class="lightbox-modal"
+      id="lightboxModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Fullscreen Image View"
+    >
+      <button
+        class="lightbox-close-btn"
+        id="lightboxCloseBtn"
+        aria-label="Close Lightbox"
+      >
+        &times;
+      </button>
+      <button
+        class="lightbox-nav-btn lightbox-prev"
+        id="lightboxPrevBtn"
+        aria-label="Previous Image"
+      >
+        ‹
+      </button>
+
+      <div class="lightbox-img-wrapper">
+        <img src="" alt="" id="lightboxImg" class="lightbox-img" />
+      </div>
+
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+
+      <button
+        class="lightbox-nav-btn lightbox-next"
+        id="lightboxNextBtn"
+        aria-label="Next Image"
+      >
+        ›
+      </button>
+    </div>
+
+    <!-- Result Sheet Modal (For Matric & Inter Result Sheets) -->
+    <div
+      class="result-modal"
+      id="resultModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Official Result Sheet View"
+    >
+      <div class="result-modal-box">
+        <div class="result-modal-header">
+          <h3 id="resultModalTitle" class="result-modal-title">
+            Official Examination Result Sheet
+          </h3>
+          <div class="result-modal-actions">
+            <button
+              id="resultModalClose"
+              class="result-modal-close"
+              aria-label="Close Result Sheet Modal"
+            >
+              &times;
+            </button>
+          </div>
+        </div>
+        <div class="result-modal-body">
+          <img
+            id="resultModalImg"
+            src=""
+            alt="Result Sheet"
+            class="result-modal-img"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer with Phone and Email in Column with Icons -->
+    <footer class="footer container">
+      <div class="footer-copy flow-from-left">
+        &copy; 2026 Adeel Usman. All rights reserved.
+      </div>
+      <div class="footer-contact-col flow-from-right">
+        <a
+          href="tel:+923284131583"
+          class="footer-contact-item"
+          title="Call Adeel Usman"
+        >
+          <span class="footer-contact-icon">📞</span>
+          <span>+92 328 4131583</span>
+        </a>
+        <a
+          href="mailto:adeelu001@gmail.com"
+          class="footer-contact-item"
+          title="Email Adeel Usman"
+        >
+          <span class="footer-contact-icon">✉️</span>
+          <span>adeelu001@gmail.com</span>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base href="https://vantriaprivatetransit-28117.web.app/" />
+    <style>
+      html {
+        scroll-behavior: auto;
+      }
+      #why-choose,
+      #route-map,
+      #booking-form,
+      #booking-form-wrap {
+        scroll-margin-top: 80px;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Vantria Private Transit | Reliable Chauffeur & Airport Transfers
+    </title>
+    <meta
+      name="description"
+      content="Book professional private transit and airport transfers with Vantria. Reliable, comfortable, and punctual rides across major UK routes."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TaxiService",
+        "name": "Vantria Private Transit",
+        "areaServed": "Reading, UK",
+        "providerMobility": "dynamic"
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="loader-logo">
+        <svg class="loader-symbol" viewBox="0 0 50 50" width="60" height="60">
+          <defs>
+            <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00d4ff" />
+              <stop offset="100%" stop-color="#3a86ff" />
+            </linearGradient>
+          </defs>
+          <path
+            class="loader-square"
+            d="M 6 22 L 6 6 L 44 6 L 44 44 L 20 44"
+            fill="none"
+            stroke="url(#loaderGrad)"
+            stroke-width="3.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <text
+            class="loader-char"
+            x="25"
+            y="31"
+            font-family="'Inter', -apple-system, sans-serif"
+            font-weight="600"
+            font-size="21"
+            fill="url(#loaderGrad)"
+            text-anchor="middle"
+          >
+            V
+          </text>
+        </svg>
+      </div>
+      <div class="loader-text">Vantria Private Transit</div>
+    </div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Page Transition -->
+    <div class="page-transition" id="pageTransition"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Header -->
+    <header id="mainHeader">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="logo">
+          <svg
+            class="logo-symbol"
+            viewBox="0 0 50 50"
+            width="36"
+            height="36"
+            style="flex-shrink: 0"
+          >
+            <defs>
+              <linearGradient
+                id="logoGradHeader"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stop-color="#00d4ff" />
+                <stop offset="100%" stop-color="#3a86ff" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M 6 22 L 6 6 L 44 6 L 44 44 L 20 44"
+              fill="none"
+              stroke="url(#logoGradHeader)"
+              stroke-width="3.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <text
+              x="25"
+              y="31"
+              font-family="'Inter', -apple-system, sans-serif"
+              font-weight="600"
+              font-size="21"
+              fill="url(#logoGradHeader)"
+              text-anchor="middle"
+            >
+              V
+            </text>
+          </svg>
+          <span
+            class="logo-text"
+            style="
+              font-family: &quot;Inter&quot;, sans-serif;
+              font-weight: 800;
+              font-size: 1.25rem;
+              letter-spacing: 0.05em;
+              text-transform: uppercase;
+            "
+          >
+            <span
+              style="
+                background: linear-gradient(135deg, #00d4ff 0%, #3a86ff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+              "
+              >VANTRIA PRIVATE TRANSIT</span
+            >
+          </span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="fleet.html">Fleet</a>
+          <a href="book.html">Book Now</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+
+        <div class="header-right-actions">
+          <!-- Visible only on mobile -->
+          <div class="mobile-nav-actions">
+            <a href="index.html" class="btn btn-glass active">Home</a>
+            <a href="fleet.html" class="btn btn-glass">Fleet</a>
+          </div>
+          <div
+            class="mobile-menu-btn"
+            aria-label="Open mobile menu"
+            role="button"
+            tabindex="0"
+            onclick="toggleMobileMenu()"
+          >
+            <i data-lucide="menu"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <nav style="display: flex; flex-direction: column; gap: 0">
+        <a href="index.html" class="active" onclick="toggleMobileMenu()"
+          >Home</a
+        >
+        <a href="fleet.html" onclick="toggleMobileMenu()">Fleet</a>
+        <a href="book.html" onclick="toggleMobileMenu()">Book Now</a>
+        <a href="contact.html" onclick="toggleMobileMenu()">Contact Us</a>
+      </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- Decorative blobs -->
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+      <div class="hero-blob hero-blob-3"></div>
+
+      <div class="container grid hero-grid" style="width: 100%">
+        <!-- Left: Content + Image -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Reading, UK
+          </div>
+
+          <h1>
+            Vantria Private Transit &mdash; Reliable Taxi Service in&nbsp;<br />
+            <span class="gradient-text">Reading, UK</span>
+          </h1>
+
+          <p>
+            Experience the ultimate in local travel with Vantria Private
+            Transit. Professional drivers, punctual service, and the most modern
+            fleet in the city. Available 24/7.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="book.html" class="btn btn-primary" id="hero-book-btn">
+              <i data-lucide="calendar-check" style="width: 18px"></i>
+              Book Your Ride
+            </a>
+            <a href="fleet.html" class="btn btn-glass">
+              <i data-lucide="car" style="width: 18px"></i>
+              Explore Fleet
+            </a>
+          </div>
+
+          <!-- Taxi image below stats on mobile -->
+          <div class="hero-taxi-wrap" style="margin-top: 2.5rem">
+            <img
+              src="./Sleek Reading Rides Taxi.png"
+              alt="Sleek Vantria Private Transit Taxi"
+            />
+            <div class="orbit-ring">
+              <div class="orbit-dot"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Booking Form -->
+        <div class="hero-form-card" id="booking-form-wrap">
+          <div style="margin-bottom: 1.75rem">
+            <h2>Reserve Your Ride</h2>
+            <p>Fill out the details below to instantly book your taxi.</p>
+          </div>
+
+          <form id="booking-form">
+            <div class="hero-form-grid-2">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input
+                  type="text"
+                  id="fullName"
+                  class="form-input"
+                  placeholder="John Smith"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input
+                  type="email"
+                  id="emailAddress"
+                  class="form-input"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                class="form-input"
+                placeholder="+44 xxx xxx xxxx"
+                required
+              />
+            </div>
+
+            <div class="hero-form-grid-3">
+              <div class="form-group">
+                <label>Passengers</label>
+                <input
+                  type="number"
+                  id="passengers"
+                  min="1"
+                  class="form-input"
+                  placeholder="1"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Suitcases</label>
+                <input
+                  type="number"
+                  id="suitcases"
+                  min="0"
+                  class="form-input"
+                  placeholder="0"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label>Hand Luggage</label>
+                <input
+                  type="number"
+                  id="handLuggage"
+                  min="0"
+                  class="form-input"
+                  placeholder="0"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label
+                ><i
+                  data-lucide="map-pin"
+                  style="width: 15px; margin-right: 6px"
+                ></i>
+                Pick-up Location</label
+              >
+              <input
+                type="text"
+                id="pickupLocation"
+                class="form-input"
+                placeholder="Enter pick-up address or airport code"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label
+                ><i
+                  data-lucide="flag"
+                  style="width: 15px; margin-right: 6px"
+                ></i>
+                Drop-off Location</label
+              >
+              <input
+                type="text"
+                id="dropoffLocation"
+                class="form-input"
+                placeholder="Enter destination address"
+                required
+              />
+            </div>
+
+            <div class="hero-form-grid-2">
+              <div class="form-group">
+                <label>Outbound Flight Number</label>
+                <input
+                  type="text"
+                  id="outboundFlight"
+                  class="form-input"
+                  placeholder="e.g. BA123"
+                />
+              </div>
+              <div class="form-group">
+                <label>Outbound Date/Time</label>
+                <input
+                  type="datetime-local"
+                  id="outboundDateTime"
+                  class="form-input"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label
+                ><i
+                  data-lucide="car"
+                  style="width: 15px; margin-right: 6px"
+                ></i>
+                Vehicle Type</label
+              >
+              <select id="vehicleType" class="form-input" required>
+                <option value="Saloon Car">Saloon Car</option>
+                <option value="Estate Car">Estate Car</option>
+                <option value="Executive">Executive</option>
+                <option value="MPV (7 Seater)">MPV (7 Seater)</option>
+                <option value="MPV (8 Seater)">MPV (8 Seater)</option>
+                <option value="MPV (8 Seat-XL)">MPV (8 Seat-XL)</option>
+                <option value="Wheelchair MPV">Wheelchair MPV</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Trip Type</label>
+              <select id="tripType" class="form-input" required>
+                <option value="One Way">One Way</option>
+                <option value="Return">Return</option>
+              </select>
+            </div>
+
+            <div
+              id="returnTripFields"
+              style="display: none; gap: 1.25rem"
+              class="hero-form-grid-2"
+            >
+              <div class="form-group" style="grid-column: span 2">
+                <label>Return Flight Number</label>
+                <input
+                  type="text"
+                  id="returnFlight"
+                  class="form-input"
+                  placeholder="e.g. BA456"
+                />
+              </div>
+              <div class="form-group">
+                <label>Return Date</label>
+                <input type="date" id="returnDate" class="form-input" />
+              </div>
+              <div class="form-group">
+                <label>Return Time</label>
+                <input type="time" id="returnTime" class="form-input" />
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem">
+              <button
+                type="button"
+                class="btn btn-outline quote-btn"
+                style="flex: 1; padding: 1rem"
+              >
+                <i data-lucide="receipt" style="width: 16px"></i>
+                Quote
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary confirm-btn"
+                style="flex: 1; padding: 1rem"
+              >
+                <i data-lucide="check-circle" style="width: 16px"></i>
+                Book
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Fleet -->
+    <section class="fleet-section">
+      <div class="container" style="position: relative; z-index: 1">
+        <div class="section-header reveal" style="padding-top: 3rem">
+          <div class="section-label">
+            <i data-lucide="car" style="width: 13px"></i>
+            Our Vehicles
+          </div>
+          <h2>Our Top <span class="gradient-text">Vehicles</span></h2>
+          <p>
+            Explore some of our most popular rides — from solo trips to large
+            group journeys.
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="grid fleet-grid">
+          <!-- Saloon Car -->
+          <div class="vehicle-card reveal delay-100">
+            <div class="vehicle-card-img-wrap">
+              <img src="./Saloon.png" alt="Saloon Car" />
+            </div>
+            <div class="vehicle-card-body">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <h3 class="vehicle-card-title">Saloon Car</h3>
+                <span class="vehicle-card-badge">Most Popular</span>
+              </div>
+              <div class="vehicle-card-specs">
+                <div class="vehicle-spec">
+                  <i data-lucide="users"></i> 4 Passengers
+                </div>
+                <div class="vehicle-spec">
+                  <i data-lucide="briefcase"></i> 2 Suitcases
+                </div>
+                <div class="vehicle-spec">
+                  <i data-lucide="shopping-bag"></i> 2 Cabin Bags
+                </div>
+              </div>
+              <a
+                href="book.html?vehicle=Saloon+Car"
+                class="btn btn-primary"
+                style="width: 100%"
+                >Select This Vehicle</a
+              >
+            </div>
+          </div>
+
+          <!-- Estate Car -->
+          <div class="vehicle-card reveal delay-200">
+            <div class="vehicle-card-img-wrap">
+              <img src="./Estate.png" alt="Estate Car" />
+            </div>
+            <div class="vehicle-card-body">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <h3 class="vehicle-card-title">Estate Car</h3>
+                <span class="vehicle-card-badge">Small Families</span>
+              </div>
+              <p
+                style="
+                  font-size: 0.82rem;
+                  color: var(--text-muted);
+                  margin-bottom: 1rem;
+                "
+              >
+                Best for everyday travel or families with extra luggage.
+              </p>
+              <div class="vehicle-card-specs">
+                <div class="vehicle-spec">
+                  <i data-lucide="users"></i> 4 Passengers
+                </div>
+                <div class="vehicle-spec">
+                  <i data-lucide="briefcase"></i> 2 Suitcases
+                </div>
+                <div class="vehicle-spec">
+                  <i data-lucide="shopping-bag"></i> 2 Cabin Bags
+                </div>
+              </div>
+              <a
+                href="book.html?vehicle=Estate+Car"
+                class="btn btn-primary"
+                style="width: 100%"
+                >Select This Vehicle</a
+              >
+            </div>
+          </div>
+
+          <!-- Executive -->
+          <div class="vehicle-card reveal delay-300">
+            <div class="vehicle-card-img-wrap">
+              <img src="./Executive.png" alt="Executive Car" />
+            </div>
+            <div class="vehicle-card-body">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 0.5rem;
+                "
+              >
+                <h3 class="vehicle-card-title">Executive</h3>
+                <span
+                  class="vehicle-card-badge"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(255, 180, 0, 0.15),
+                      rgba(255, 140, 0, 0.15)
+                    );
+                    color: #c97000;
+                  "
+                  >Premium</span
+                >
+              </div>
+              <div class="vehicle-card-specs">
+                <div class="vehicle-spec">
+                  <i data-lucide="users"></i> 4 Passengers
+                </div>
+                <div class="vehicle-spec">
+                  <i data-lucide="briefcase"></i> 2 Suitcases
+                </div>
+              </div>
+              <a
+                href="book.html?vehicle=Executive"
+                class="btn btn-primary"
+                style="width: 100%"
+                >Select This Vehicle</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem" class="reveal">
+          <a
+            href="fleet.html"
+            class="btn btn-outline"
+            style="padding: 0.9rem 2.5rem"
+          >
+            <i data-lucide="layout-grid" style="width: 16px"></i>
+            View Full Fleet
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-choose" class="why-section">
+      <div class="container">
+        <div class="section-header reveal" id="why-choose-header">
+          <div
+            class="section-label"
+            style="
+              background: rgba(58, 134, 255, 0.15);
+              border-color: rgba(58, 134, 255, 0.4);
+              color: var(--accent-2);
+            "
+          >
+            <i data-lucide="star" style="width: 13px"></i>
+            Why Us
+          </div>
+          <h2 style="color: #fff">
+            Why Choose
+            <span class="gradient-text">Vantria Private Transit?</span>
+          </h2>
+          <p style="color: rgba(255, 255, 255, 0.5)">
+            We pride ourselves on excellence, reliability, and making every
+            journey exceptional.
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card reveal delay-100">
+            <div class="feature-icon-wrap">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <h3>Vetted Professional Drivers</h3>
+            <p>
+              Every driver undergoes rigorous background checks and safety
+              training for your complete peace of mind.
+            </p>
+          </div>
+
+          <div class="feature-card reveal delay-200">
+            <div class="feature-icon-wrap">
+              <i data-lucide="clock"></i>
+            </div>
+            <h3>24/7 Availability</h3>
+            <p>
+              Day or night, rain or shine — our fleet is always ready to pick
+              you up whenever you need us.
+            </p>
+          </div>
+
+          <div class="feature-card reveal delay-300">
+            <div class="feature-icon-wrap">
+              <i data-lucide="banknote"></i>
+            </div>
+            <h3>Transparent Pricing</h3>
+            <p>
+              No hidden fees or surge pricing. Know exactly what you'll pay
+              before you even step inside.
+            </p>
+          </div>
+
+          <div class="feature-card reveal delay-400">
+            <div class="feature-icon-wrap">
+              <i data-lucide="plane"></i>
+            </div>
+            <h3>Airport Transfers</h3>
+            <p>
+              Stress-free transfers to and from Heathrow, Gatwick, Stansted, and
+              all major UK airports.
+            </p>
+          </div>
+
+          <div class="feature-card reveal delay-500">
+            <div class="feature-icon-wrap">
+              <i data-lucide="accessibility"></i>
+            </div>
+            <h3>Wheelchair Accessible</h3>
+            <p>
+              Our specially equipped MPV ensures every passenger travels
+              comfortably and with dignity.
+            </p>
+          </div>
+
+          <div class="feature-card reveal delay-600">
+            <div class="feature-icon-wrap">
+              <i data-lucide="smartphone"></i>
+            </div>
+            <h3>Instant Booking</h3>
+            <p>
+              Book online in under 2 minutes or contact us directly via WhatsApp
+              for immediate assistance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-ring"></div>
+      <div class="cta-ring"></div>
+      <div class="cta-ring"></div>
+      <div class="container" style="position: relative; z-index: 1">
+        <div class="reveal">
+          <h2>Ready for Your Next Journey?</h2>
+          <p>
+            Book your ride now and experience the Vantria Private Transit
+            difference.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="book.html"
+              class="btn"
+              style="
+                background: #fff;
+                color: var(--accent);
+                font-weight: 800;
+                padding: 1rem 2.5rem;
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+              "
+            >
+              <i data-lucide="calendar-check" style="width: 18px"></i>
+              Book Now
+            </a>
+            <a
+              href="https://wa.me/447737133374"
+              target="_blank"
+              class="btn btn-glass"
+              style="padding: 1rem 2rem"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                width="18"
+                height="18"
+                fill="currentColor"
+              >
+                <path
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.7c-32.3 0-64-8.7-91.8-25l-6.6-3.9-68.1 17.9 18.2-66.5-4.3-6.8c-17.7-28-27-60.5-27-93.9 0-103.5 84.3-187.8 187.8-187.8 52.8 0 102.5 20.6 139.8 57.9 37.3 37.3 57.8 86.9 57.8 139.8 0 103.5-84.3 187.8-187.8 187.8zM326.6 277c-5.6-2.8-33.3-16.4-38.5-18.3-5.2-1.9-9-2.8-12.8 2.8-3.8 5.6-14.6 18.3-17.9 22.1-3.3 3.8-6.6 4.3-12.3 1.4-5.6-2.8-23.7-8.8-45.2-28.1-16.7-15-28-33.5-31.3-39.1-3.3-5.6-.4-8.6 2.4-11.4 2.5-2.5 5.6-6.6 8.4-9.9 2.8-3.3 3.8-5.6 5.6-9.4 1.9-3.8.9-7.1-.5-9.9-1.4-2.8-12.8-30.9-17.5-42.3-4.6-11.1-9.3-9.6-12.8-9.8-3.3-.1-7.1-.1-10.9-.1-3.8 0-9.9 1.4-15 7.1-5.2 5.6-19.7 19.3-19.7 47s20.2 54.5 23 58.3c2.8 3.8 39.7 60.7 96.2 85 13.4 5.8 23.9 9.2 32 11.8 13.5 4.3 25.8 3.7 35.5 2.2 10.9-1.6 33.3-13.6 38-26.8 4.7-13.2 4.7-24.4 3.3-26.8-1.3-2.4-5.1-3.8-10.7-6.6z"
+                />
+              </svg>
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Integration -->
+    <section id="route-map" class="map-section">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40000!2d-1.0000!3d51.4543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487684074f4b1633%3A0xb355106880053703!2sReading!5e0!3m2!1sen!2suk!4v1620000000000!5m2!1sen!2suk"
+        title="Google Maps Location of Vantria Private Transit"
+        allowfullscreen
+        loading="lazy"
+      >
+      </iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-grid grid">
+        <div class="footer-brand">
+          <a
+            href="index.html"
+            class="logo"
+            style="
+              font-size: 1.6rem;
+              font-weight: 900;
+              gap: 0.5rem;
+              justify-content: flex-start;
+              margin-bottom: 1rem;
+            "
+          >
+            <svg
+              class="logo-symbol"
+              viewBox="0 0 50 50"
+              width="36"
+              height="36"
+              style="flex-shrink: 0"
+            >
+              <defs>
+                <linearGradient
+                  id="logoGradFooter"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stop-color="#00d4ff" />
+                  <stop offset="100%" stop-color="#3a86ff" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M 6 22 L 6 6 L 44 6 L 44 44 L 20 44"
+                fill="none"
+                stroke="url(#logoGradFooter)"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <text
+                x="25"
+                y="31"
+                font-family="'Inter', -apple-system, sans-serif"
+                font-weight="600"
+                font-size="21"
+                fill="url(#logoGradFooter)"
+                text-anchor="middle"
+              >
+                V
+              </text>
+            </svg>
+            <span
+              class="logo-text"
+              style="
+                font-family: &quot;Inter&quot;, sans-serif;
+                font-weight: 800;
+                font-size: 1.25rem;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+              "
+            >
+              <span
+                style="
+                  background: linear-gradient(135deg, #00d4ff 0%, #3a86ff 100%);
+                  -webkit-background-clip: text;
+                  -webkit-text-fill-color: transparent;
+                  background-clip: text;
+                "
+                >VANTRIA PRIVATE TRANSIT</span
+              >
+            </span>
+          </a>
+          <p>
+            Providing premium transportation services across Reading and beyond.
+            Your comfort is our commitment.
+          </p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-quick-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="fleet.html">Fleet</a></li>
+            <li><a href="book.html">Book Now</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="reading-to-heathrow.html">Reading to Heathrow</a></li>
+            <li><a href="reading-to-gatwick.html">Reading to Gatwick</a></li>
+            <li><a href="reading-to-london.html">Reading to London</a></li>
+            <li><a href="reading-to-stansted.html">Reading to Stansted</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Help &amp; Legal</h4>
+          <ul>
+            <li><a href="legal.html#faqs">FAQs</a></li>
+            <li><a href="legal.html#help">Help Centre</a></li>
+            <li><a href="legal.html#privacy">Privacy Policy</a></li>
+            <li><a href="legal.html#terms">Terms of Service</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Info</h4>
+          <div
+            style="
+              display: flex;
+              flex-direction: column;
+              gap: 0.75rem;
+              margin-top: 0;
+            "
+          >
+            <a
+              href="tel:+447737133374"
+              class="mobile-only"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 0.875rem;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = 'var(--accent-2)'"
+              onmouseout="this.style.color = 'rgba(255,255,255,0.5)'"
+            >
+              <i
+                data-lucide="phone"
+                style="width: 14px; color: var(--accent); flex-shrink: 0"
+              ></i>
+              Call: +44 7737 133374
+            </a>
+            <a
+              href="sms:+447737133374"
+              class="mobile-only"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 0.875rem;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = 'var(--accent-2)'"
+              onmouseout="this.style.color = 'rgba(255,255,255,0.5)'"
+            >
+              <i
+                data-lucide="message-square"
+                style="width: 14px; color: var(--accent); flex-shrink: 0"
+              ></i>
+              Message: +44 7737 133374
+            </a>
+            <a
+              href="https://wa.me/447737133374"
+              target="_blank"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 0.875rem;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = 'var(--accent-2)'"
+              onmouseout="this.style.color = 'rgba(255,255,255,0.5)'"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                width="14"
+                height="14"
+                fill="currentColor"
+                style="color: var(--accent); flex-shrink: 0"
+              >
+                <path
+                  d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.7c-32.3 0-64-8.7-91.8-25l-6.6-3.9-68.1 17.9 18.2-66.5-4.3-6.8c-17.7-28-27-60.5-27-93.9 0-103.5 84.3-187.8 187.8-187.8 52.8 0 102.5 20.6 139.8 57.9 37.3 37.3 57.8 86.9 57.8 139.8 0 103.5-84.3 187.8-187.8 187.8zM326.6 277c-5.6-2.8-33.3-16.4-38.5-18.3-5.2-1.9-9-2.8-12.8 2.8-3.8 5.6-14.6 18.3-17.9 22.1-3.3 3.8-6.6 4.3-12.3 1.4-5.6-2.8-23.7-8.8-45.2-28.1-16.7-15-28-33.5-31.3-39.1-3.3-5.6-.4-8.6 2.4-11.4 2.5-2.5 5.6-6.6 8.4-9.9 2.8-3.3 3.8-5.6 5.6-9.4 1.9-3.8.9-7.1-.5-9.9-1.4-2.8-12.8-30.9-17.5-42.3-4.6-11.1-9.3-9.6-12.8-9.8-3.3-.1-7.1-.1-10.9-.1-3.8 0-9.9 1.4-15 7.1-5.2 5.6-19.7 19.3-19.7 47s20.2 54.5 23 58.3c2.8 3.8 39.7 60.7 96.2 85 13.4 5.8 23.9 9.2 32 11.8 13.5 4.3 25.8 3.7 35.5 2.2 10.9-1.6 33.3-13.6 38-26.8 4.7-13.2 4.7-24.4 3.3-26.8-1.3-2.4-5.1-3.8-10.7-6.6z"
+                />
+              </svg>
+              WhatsApp: +44 7737 133374
+            </a>
+            <a
+              href="mailto:vantriaprivatetransit@gmail.com"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 0.875rem;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = 'var(--accent-2)'"
+              onmouseout="this.style.color = 'rgba(255,255,255,0.5)'"
+            >
+              <i
+                data-lucide="mail"
+                style="width: 14px; color: var(--accent); flex-shrink: 0"
+              ></i>
+              vantriaprivatetransit@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <p>&copy; 2026 Vantria Private Transit. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="main.js"></script>
+    <script src="animations.js"></script>
+    <script>
+      try {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+      } catch (e) {}
+      lucide.createIcons();
+    </script>
+    <script>
+
+      // Universal Cross-Context Navigation Listener for Live Sandbox
+
+      window.addEventListener('message', function(event) {
+
+        if (!event.data || !event.data.action) return;
+
+        if (event.data.action === 'scroll_to') {
+
+          var targetId = event.data.targetId;
+
+          var el = null;
+
+          if (targetId === 'why-choose') {
+
+            el = document.getElementById('why-choose-header') || document.getElementById('why-choose');
+
+          } else if (targetId === 'booking-form' || targetId === 'booking-form-wrap') {
+
+            el = document.getElementById('booking-form-wrap') || document.getElementById('booking-form');
+
+          } else if (targetId === 'route-map') {
+
+            el = document.getElementById('route-map');
+
+          } else if (targetId === 'top') {
+
+            window.scrollTo({ top: 0, behavior: 'auto' });
+
+            return;
+
+          } else {
+
+            el = document.getElementById(targetId);
+
+          }
+
+          if (el) {
+
+            var header = document.getElementById('mainHeader');
+
+            var headerOffset = (header ? header.offsetHeight : 0) + 20;
+
+            var targetY = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+            window.scrollTo({ top: Math.max(0, targetY), behavior: 'auto' });
+
+          }
+
+        }
+
+      });
+
+    </script>
+
+  </body>
+</html>
