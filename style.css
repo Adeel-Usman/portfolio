@@ -806,6 +806,8 @@ a {
 /* Synchronized, uninterrupted entrance for all cards (zero delays, no break in between) */
 .edu-card-matric.flow-from-left,
 .edu-card-inter.flow-from-right,
+.edu-card-uni.flow-from-left,
+.cv-showcase-card.flow-from-left,
 .skills-grid .skill-card,
 .contact-card-grid .contact-card {
   transition-delay: 0s;
@@ -839,8 +841,8 @@ a {
 
 .edu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.75rem;
 }
 
 .edu-card {
@@ -869,6 +871,16 @@ a {
 .edu-card-inter.is-floating,
 .edu-card-inter.is-flowing {
   animation: floatBoxRight 25s ease-in-out infinite 0.8s;
+}
+
+.edu-card-uni.is-floating,
+.edu-card-uni.is-flowing {
+  animation: floatBoxLeft 24s ease-in-out infinite 1.4s;
+}
+
+.cv-showcase-card.is-floating,
+.cv-showcase-card.is-flowing {
+  animation: floatBoxLeft 26s ease-in-out infinite 0.5s;
 }
 
 .edu-card::before {
@@ -968,6 +980,29 @@ a {
 
 .btn-result-sheet .btn-icon {
   font-size: 1.1rem;
+}
+
+.btn-status-only {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--yellow-tint);
+  border: 1px dashed var(--yellow-border);
+  color: var(--yellow-primary);
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: default;
+  user-select: none;
+  transition: all var(--transition);
+}
+
+.btn-status-only:hover {
+  border-color: var(--yellow-primary);
+  box-shadow: 0 2px 12px var(--yellow-glow);
 }
 
 /* ==========================================================================
@@ -2707,6 +2742,135 @@ a {
   image-rendering: high-quality;
 }
 
+/* ==========================================================================
+   CURRICULUM VITAE (CV) SECTION
+   ========================================================================== */
+.cv-section {
+  padding: 5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.cv-showcase-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  position: relative;
+  max-width: 840px;
+  margin: 0 auto;
+  transition: border-color var(--transition), box-shadow var(--transition), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+}
+
+.cv-showcase-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--yellow-primary);
+  opacity: 0.8;
+  z-index: 5;
+}
+
+.cv-showcase-card:hover {
+  border-color: var(--yellow-primary);
+  box-shadow: 0 0 35px var(--yellow-glow), 0 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+.cv-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: rgba(10, 10, 14, 0.85);
+  border-bottom: 1px solid var(--border-color);
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+[data-theme="light"] .cv-topbar {
+  background: rgba(248, 250, 252, 0.9);
+}
+
+.cv-topbar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.cv-badge-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.cv-doc-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.01em;
+}
+
+.cv-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.cv-topbar-actions .btn {
+  padding: 0.6rem 1.15rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.cv-document-frame {
+  position: relative;
+  width: 100%;
+  background: #08080b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  overflow: hidden;
+}
+
+[data-theme="light"] .cv-document-frame {
+  background: #f1f5f9;
+}
+
+.cv-embedded-img {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(250, 204, 21, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  display: block;
+}
+
+.cv-embedded-img:hover {
+  border-color: var(--yellow-primary);
+  box-shadow: 0 12px 36px var(--yellow-glow), 0 10px 30px rgba(0, 0, 0, 0.9);
+}
+
 /* Contact Section */
 .contact-section {
   padding: 5rem 0 3.5rem 0;
@@ -3416,6 +3580,26 @@ a {
   
   .result-modal-body {
     padding: 0.75rem;
+  }
+
+  /* CV Section Mobile */
+  .cv-topbar {
+    padding: 1.25rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .cv-topbar-actions {
+    width: 100%;
+  }
+  
+  .cv-topbar-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .cv-document-frame {
+    padding: 1rem 0.5rem;
   }
 
   .polygon-stage-grid {
