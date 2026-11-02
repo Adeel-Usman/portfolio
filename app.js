@@ -26,11 +26,14 @@ function initAll() {
   initScrollAnimations();
   initThemeToggle();
   initMobileMenu();
+  initMailLinks();
 }
 
 // Run on DOMContentLoaded or immediately if already loaded
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initAll);
+} else {
+  initAll();
 }
 
 /* ==========================================================================
@@ -1235,25 +1238,107 @@ function initMobileMenu() {
   const navLinks = document.getElementById("navLinks");
   if (!toggleBtn || !navLinks) return;
 
-  toggleBtn.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("is-open");
-    toggleBtn.classList.toggle("is-active", isOpen);
-    toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  function closeMenu() {
+    navLinks.classList.remove("is-open");
+    toggleBtn.classList.remove("is-active");
+    toggleBtn.setAttribute("aria-expanded", "false");
+  }
+
+  function openMenu() {
+    navLinks.classList.add("is-open");
+    toggleBtn.classList.add("is-active");
+    toggleBtn.setAttribute("aria-expanded", "true");
+  }
+
+  function handleToggle(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (navLinks.classList.contains("is-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  toggleBtn.onclick = handleToggle;
+
+  navLinks.querySelectorAll("a").forEach(function(link) {
+    function handleNavClick(e) {
+      const href = link.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
+
+      const targetId = href.substring(1);
+      const target = document.getElementById(targetId);
+
+      // Always close menu
+      closeMenu();
+
+      if (target) {
+        if (e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+
+        try {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        } catch (err) {
+          const header = document.querySelector(".header");
+          const headerH = header ? header.offsetHeight : 56;
+          const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+          const targetRect = target.getBoundingClientRect();
+          const targetY = Math.max(0, targetRect.top + currentScrollY - headerH - 12);
+          window.scrollTo({
+            top: targetY,
+            behavior: "smooth"
+          });
+        }
+
+        if (window.history && window.history.pushState) {
+          window.history.pushState(null, "", href);
+        }
+      }
+    }
+
+    link.onclick = handleNavClick;
   });
 
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("is-open");
-      toggleBtn.classList.remove("is-active");
-      toggleBtn.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!toggleBtn.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove("is-open");
-      toggleBtn.classList.remove("is-active");
-      toggleBtn.setAttribute("aria-expanded", "false");
+  document.addEventListener("click", function(e) {
+    if (navLinks.classList.contains("is-open") &&
+        !toggleBtn.contains(e.target) &&
+        !navLinks.contains(e.target)) {
+      closeMenu();
     }
   });
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape" && navLinks.classList.contains("is-open")) {
+      closeMenu();
+    }
+  });
+}
+
+// Safety execution
+
+/* ==========================================================================
+   DIRECT GOOGLE MAIL (GMAIL) COMPOSER INTEGRATION
+   ========================================================================== */
+function initMailLinks() {
+  const mailLinks = document.querySelectorAll('a[href*="mail.google.com"], a[href^="mailto:"]');
+  const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1&to=adeelu001@gmail.com";
+  mailLinks.forEach((link) => {
+    link.setAttribute("href", gmailUrl);
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+    link.onclick = function(e) {
+      // Ensure smooth popup / new tab open
+      window.open(gmailUrl, "_blank", "noopener,noreferrer");
+      if (e) e.preventDefault();
+    };
+  });
+}
+
+if (!isInitialized) {
+  initAll();
 }

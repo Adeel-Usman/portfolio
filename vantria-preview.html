@@ -12,9 +12,30 @@
       #booking-form-wrap {
         scroll-margin-top: 80px;
       }
+      .mobile-drawer {
+        display: none;
+        background-color: #0a0f1d !important;
+        background: #0a0f1d !important;
+        border-bottom: 2px solid #facc15 !important;
+        padding: 1rem 1.5rem;
+      }
+      .mobile-drawer.is-open {
+        display: block !important;
+      }
+      .mobile-drawer a {
+        display: block;
+        padding: 0.75rem 0;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
     </style>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=deD:\Portfolio\vantria-preview.htmlvice-width, initial-scale=1.0"
+    />
     <title>
       Vantria Private Transit | Reliable Chauffeur & Airport Transfers
     </title>
@@ -985,62 +1006,59 @@
         emailjs.init(EMAILJS_PUBLIC_KEY);
       } catch (e) {}
       lucide.createIcons();
+      function toggleMobileMenu() {
+        var drawer = document.getElementById("mobileDrawer");
+        if (drawer) {
+          drawer.classList.toggle("is-open");
+        }
+      }
     </script>
     <script>
-
       // Universal Cross-Context Navigation Listener for Live Sandbox
 
-      window.addEventListener('message', function(event) {
-
+      window.addEventListener("message", function (event) {
         if (!event.data || !event.data.action) return;
 
-        if (event.data.action === 'scroll_to') {
-
+        if (event.data.action === "scroll_to") {
           var targetId = event.data.targetId;
 
           var el = null;
 
-          if (targetId === 'why-choose') {
-
-            el = document.getElementById('why-choose-header') || document.getElementById('why-choose');
-
-          } else if (targetId === 'booking-form' || targetId === 'booking-form-wrap') {
-
-            el = document.getElementById('booking-form-wrap') || document.getElementById('booking-form');
-
-          } else if (targetId === 'route-map') {
-
-            el = document.getElementById('route-map');
-
-          } else if (targetId === 'top') {
-
-            window.scrollTo({ top: 0, behavior: 'auto' });
+          if (targetId === "why-choose") {
+            el =
+              document.getElementById("why-choose-header") ||
+              document.getElementById("why-choose");
+          } else if (
+            targetId === "booking-form" ||
+            targetId === "booking-form-wrap"
+          ) {
+            el =
+              document.getElementById("booking-form-wrap") ||
+              document.getElementById("booking-form");
+          } else if (targetId === "route-map") {
+            el = document.getElementById("route-map");
+          } else if (targetId === "top") {
+            window.scrollTo({ top: 0, behavior: "auto" });
 
             return;
-
           } else {
-
             el = document.getElementById(targetId);
-
           }
 
           if (el) {
-
-            var header = document.getElementById('mainHeader');
+            var header = document.getElementById("mainHeader");
 
             var headerOffset = (header ? header.offsetHeight : 0) + 20;
 
-            var targetY = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+            var targetY =
+              el.getBoundingClientRect().top +
+              window.pageYOffset -
+              headerOffset;
 
-            window.scrollTo({ top: Math.max(0, targetY), behavior: 'auto' });
-
+            window.scrollTo({ top: Math.max(0, targetY), behavior: "auto" });
           }
-
         }
-
       });
-
     </script>
-
   </body>
 </html>
